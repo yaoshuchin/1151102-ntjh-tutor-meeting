@@ -357,18 +357,7 @@
           <i class="fa-solid fa-arrow-right"></i>
         </button>
 
-        <!-- 數字小鍵盤快速點選 (選填支援) -->
-        <div class="pt-2">
-          <div class="flex items-center justify-center gap-1.5 text-xs text-slate-400">
-            <span>💡 提示：本校所在地區號碼</span>
-            <button 
-              type="button" 
-              onclick="fillDemoPassword()" 
-              class="text-emerald-600 dark:text-emerald-400 underline font-medium hover:text-emerald-700">
-              快速帶入 (049)
-            </button>
-          </div>
-        </div>
+        
       </form>
 
       <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700/60 text-[11px] text-slate-400">
@@ -2106,12 +2095,6 @@
         document.getElementById("password-input").value = "";
         document.getElementById("password-input").focus();
       }
-    }
-
-    // 快速填入示範密碼
-    function fillDemoPassword() {
-      document.getElementById("password-input").value = "049";
-      verifyPassword();
     }
 
     // 解鎖主畫面
