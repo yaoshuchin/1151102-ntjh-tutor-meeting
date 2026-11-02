@@ -87,6 +87,43 @@
       30%, 50%, 70% { transform: translate3d(-5px, 0, 0); }
       40%, 60% { transform: translate3d(5px, 0, 0); }
     }
+    /* 導師待辦檢核表 - 反白亮度調低與柔和視覺設定 */
+    #section-checklist label.checklist-item {
+      background-color: #f1f5f9; /* 降低底色亮光感，採用柔和低眩光 slate 灰色 */
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #section-checklist label.checklist-item:hover {
+      background-color: #e2e8f0 !important; /* 顯著調低懸停反白亮度，避免死白或刺眼對比 */
+      border-color: #cbd5e1 !important;
+    }
+    .dark #section-checklist label.checklist-item {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+    }
+    .dark #section-checklist label.checklist-item:hover {
+      background-color: #273549 !important; /* 深色模式下反白懸停同樣柔和微調 */
+      border-color: #475569 !important;
+    }
+    #section-checklist label.checklist-item.is-checked {
+      background-color: #e2e8f0/80;
+      opacity: 0.65;
+    }
+    .dark #section-checklist label.checklist-item.is-checked {
+      background-color: #151e2e;
+      opacity: 0.55;
+    }
+    /* 選取反白 (Selection) 亮度調低 */
+    #section-checklist ::selection {
+      background-color: #94a3b8 !important;
+      color: #0f172a !important;
+    }
+    .dark #section-checklist ::selection {
+      background-color: #475569 !important;
+      color: #f8fafc !important;
+    }
   </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200">
@@ -1471,55 +1508,55 @@
 
       <!-- ==================== 模組八：導師專用待辦檢核清單 (Checklist) ==================== -->
       <section id="section-checklist" class="content-section space-y-4" data-office="checklist">
-        <div class="flex items-center gap-2 border-b-2 border-orange-500 pb-2">
+        <div class="flex items-center gap-2 border-b-2 border-orange-400 pb-2">
           <span class="p-2 rounded-xl bg-orange-600 text-white text-base"><i class="fa-solid fa-list-check"></i></span>
           <h2 class="text-xl font-bold text-slate-800 dark:text-white">導師待辦與配合重點檢核表</h2>
-          <span class="text-xs px-2.5 py-1 rounded-full bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300 font-semibold ml-auto">點擊勾選記錄</span>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-orange-50 dark:bg-orange-950/60 text-orange-800 dark:text-orange-300 font-semibold ml-auto border border-orange-200/50 dark:border-orange-900/40">點擊勾選記錄</span>
         </div>
 
-        <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3">
+        <div class="content-card bg-slate-50/70 dark:bg-slate-800/80 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3">
           <p class="text-xs text-slate-500 dark:text-slate-400 mb-2">
             提供導師在班級經營日常中快速自主檢核（勾選狀態將暫存在您的瀏覽器中）：
           </p>
 
           <div class="space-y-2.5">
-            <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-750 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="saveChecklist()">
+            <label class="checklist-item flex items-start gap-3 p-3.5 rounded-xl cursor-pointer">
+              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="handleChecklistChange()">
               <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-200">
                 <strong>【班級事務費領取】</strong>向總務處/家長會領取每班 1,000 元事務費（11/4前），妥善運用於班級布置。
               </span>
             </label>
 
-            <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-750 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="saveChecklist()">
+            <label class="checklist-item flex items-start gap-3 p-3.5 rounded-xl cursor-pointer">
+              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="handleChecklistChange()">
               <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-200">
                 <strong>【教室佈置競賽評分】</strong>11/6(五) 早上前四節評分完畢，評分表於 12:00 前交回訓育組。
               </span>
             </label>
 
-            <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-750 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="saveChecklist()">
+            <label class="checklist-item flex items-start gap-3 p-3.5 rounded-xl cursor-pointer">
+              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="handleChecklistChange()">
               <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-200">
                 <strong>【一年級新生體檢宣導】</strong>提醒 11/12(四) 當天穿體育服、早午餐後刷牙，班長提醒任課教師隨班到活動中心維持秩序。
               </span>
             </label>
 
-            <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-750 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="saveChecklist()">
+            <label class="checklist-item flex items-start gap-3 p-3.5 rounded-xl cursor-pointer">
+              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="handleChecklistChange()">
               <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-200">
                 <strong>【平板股長推選】</strong>各班推選 2 位平板股長，負責 iPad 與充電車借還、充電及上鎖檢查。
               </span>
             </label>
 
-            <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-750 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="saveChecklist()">
+            <label class="checklist-item flex items-start gap-3 p-3.5 rounded-xl cursor-pointer">
+              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="handleChecklistChange()">
               <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-200">
                 <strong>【放學節能關機巡檢】</strong>叮嚀事務股長放學前確認大屏、門窗、電扇、壁扇及花台照明全數關閉上鎖。
               </span>
             </label>
 
-            <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-750 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="saveChecklist()">
+            <label class="checklist-item flex items-start gap-3 p-3.5 rounded-xl cursor-pointer">
+              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="handleChecklistChange()">
               <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-200">
                 <strong>【學生請假與外出確認】</strong>學生臨時外出簽名前電話聯繫家長；請假假卡3日內繳交學務處生教組。
               </span>
@@ -1811,7 +1848,12 @@
       document.getElementById("image-lightbox").classList.remove("flex");
     }
 
-    // 導師待辦清單儲存與載入
+    // 導師待辦清單儲存與載入 (支援柔和低反白亮度視覺切換)
+    function handleChecklistChange() {
+      saveChecklist();
+      applyChecklistVisuals();
+    }
+
     function saveChecklist() {
       const checkboxes = document.querySelectorAll("#section-checklist input[type='checkbox']");
       const states = Array.from(checkboxes).map(c => c.checked);
@@ -1829,6 +1871,22 @@
           });
         } catch(e) {}
       }
+      applyChecklistVisuals();
+    }
+
+    function applyChecklistVisuals() {
+      const labels = document.querySelectorAll("#section-checklist label.checklist-item");
+      labels.forEach(lbl => {
+        const cb = lbl.querySelector("input[type='checkbox']");
+        const span = lbl.querySelector("span");
+        if (cb && cb.checked) {
+          lbl.classList.add("is-checked");
+          if (span) span.classList.add("line-through", "text-slate-400", "dark:text-slate-500");
+        } else {
+          lbl.classList.remove("is-checked");
+          if (span) span.classList.remove("line-through", "text-slate-400", "dark:text-slate-500");
+        }
+      });
     }
   </script>
 </body>
