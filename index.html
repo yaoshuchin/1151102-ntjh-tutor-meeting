@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南投國中 115學年度第1學期 11月份（第2次）導師會報手冊</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%22><text y=%2222%22 font-size=%2220%22>🏫</text></svg>">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            ntjh: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#16a34a',
+              600: '#15803d',
+              700: '#166534',
+              800: '#14532d',
+              900: '#052e16',
+            },
+            edu: '#2563eb',
+            sa: '#059669',
+            ga: '#d97706',
+            guidance: '#dc2626',
+            pta: '#7c3aed',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap');
+    body {
+      font-family: 'Noto Sans TC', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .dark .glass {
+      background: rgba(30, 41, 59, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+        font-size: 11pt !important;
+      }
+      .no-print, #auth-screen, #nav-tabs, #top-bar, #search-container, .floating-btn, #checklist-view, #stats-cards {
+        display: none !important;
+      }
+      #main-content {
+        display: block !important;
+      }
+      .content-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        break-inside: avoid;
+        margin-bottom: 1.5rem !important;
+        background: white !important;
+      }
+      .print-header {
+        display: block !important;
+      }
+    }
+    .print-header {
+      display: none;
+    }
+    .badge-glow {
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    }
+    .shake-animation {
+      animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+    }
+    @keyframes shake {
+      10%, 90% { transform: translate3d(-2px, 0, 0); }
+      20%, 80% { transform: translate3d(3px, 0, 0); }
+      30%, 50%, 70% { transform: translate3d(-5px, 0, 0); }
+      40%, 60% { transform: translate3d(5px, 0, 0); }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200">
+
+  <!-- ==================== 密碼鎖定畫面 (Password Gate 049) ==================== -->
+  <div id="auth-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/90 backdrop-blur-md px-4">
+    <div id="auth-card" class="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl p-8 max-w-md w-full border border-slate-200 dark:border-slate-700 text-center relative overflow-hidden">
+      <!-- 頂部裝飾條 -->
+      <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500"></div>
+
+      <!-- 校徽圖示 -->
+      <div class="w-20 h-20 mx-auto mb-4 bg-emerald-100 dark:bg-emerald-950/60 rounded-2xl flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-3xl shadow-inner">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+
+      <h1 class="text-2xl font-bold text-slate-800 dark:text-white tracking-wide">南投縣立南投國民中學</h1>
+      <p class="text-emerald-600 dark:text-emerald-400 font-semibold text-sm mt-1">115學年度第1學期 · 11月份（第2次）導師會報</p>
+
+      <div class="my-6 p-4 bg-slate-50 dark:bg-slate-700/50 rounded-2xl border border-slate-200 dark:border-slate-600 text-left">
+        <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2 font-medium">
+          <i class="fa-solid fa-shield-halved text-emerald-500"></i> 會議專用電子資料庫系統
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+          為維護校內公務與會議資料安全，本系統僅供本校教職員工存取。請輸入會議通行密碼解鎖閱讀。
+        </p>
+      </div>
+
+      <!-- 密碼輸入表單 -->
+      <form id="auth-form" onsubmit="event.preventDefault(); verifyPassword();" class="space-y-4">
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+            <i class="fa-solid fa-key"></i>
+          </div>
+          <input 
+            type="password" 
+            id="password-input" 
+            class="w-full pl-11 pr-12 py-3.5 bg-slate-100 dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 text-center text-xl font-bold tracking-widest outline-none transition-all placeholder:text-slate-400 placeholder:text-sm placeholder:font-normal placeholder:tracking-normal"
+            placeholder="請輸入通關密碼"
+            maxlength="10"
+            autofocus
+            autocomplete="off"
+          />
+          <button 
+            type="button" 
+            onclick="togglePasswordVisibility()" 
+            class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-sm">
+            <i id="pwd-icon" class="fa-solid fa-eye"></i>
+          </button>
+        </div>
+
+        <div id="auth-error" class="hidden text-rose-500 dark:text-rose-400 text-xs font-semibold py-1">
+          <i class="fa-solid fa-circle-exclamation mr-1"></i> 密碼錯誤，請重新輸入！
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full py-3.5 px-6 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+          <span>解鎖進入會議手冊</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <!-- 數字小鍵盤快速點選 (選填支援) -->
+        <div class="pt-2">
+          <div class="flex items-center justify-center gap-1.5 text-xs text-slate-400">
+            <span>💡 提示：本校所在地區號碼</span>
+            <button 
+              type="button" 
+              onclick="fillDemoPassword()" 
+              class="text-emerald-600 dark:text-emerald-400 underline font-medium hover:text-emerald-700">
+              快速帶入 (049)
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700/60 text-[11px] text-slate-400">
+        開會時間：115年11月4日（三）07:50 · 地點：教師午餐教室
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 主應用容器 ==================== -->
+  <div id="app-container" class="opacity-0 transition-opacity duration-300">
+    
+    <!-- 列印專用抬頭 (僅列印時顯示) -->
+    <div class="print-header p-6 border-b-2 border-slate-800 text-center mb-6">
+      <h1 class="text-2xl font-bold text-black mb-1">南投縣立南投國民中學 115學年度第一學期 11月份（第二次）導師會報</h1>
+      <p class="text-sm text-gray-700">時間：115年11月4日（三）上午 07:50 ｜ 地點：教師午餐教室 ｜ 主席：學務處</p>
+    </div>
+
+    <!-- 頂部導航列 (Sticky Top Bar) -->
+    <header id="top-bar" class="sticky top-0 z-40 glass border-b border-slate-200 dark:border-slate-700/80 shadow-sm transition-colors">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 gap-3">
+          
+          <!-- 左側：校名與會議名稱 -->
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-lg font-bold shadow-md shadow-emerald-600/20 shrink-0">
+              <i class="fa-solid fa-school"></i>
+            </div>
+            <div class="min-w-0">
+              <div class="flex items-center gap-2">
+                <span class="font-bold text-slate-900 dark:text-white truncate text-base sm:text-lg">南投國中 115-11 導師會報</span>
+                <span class="hidden md:inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">
+                  第2次會報
+                </span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 hidden sm:block truncate">
+                115年11月4日（三）07:50 ｜ 教師午餐教室
+              </p>
+            </div>
+          </div>
+
+          <!-- 中間：即時搜尋框 -->
+          <div class="flex-1 max-w-md hidden lg:block" id="search-container">
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i class="fa-solid fa-magnifying-glass text-sm"></i>
+              </div>
+              <input 
+                type="text" 
+                id="search-input" 
+                oninput="handleSearch(this.value)" 
+                placeholder="搜尋處室、組別、宣導關鍵字（例如：冷氣、因材網、體檢、段考）..."
+                class="w-full pl-10 pr-10 py-2 text-sm bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-slate-800 dark:text-slate-100 placeholder:text-slate-400 transition-all"
+              />
+              <button 
+                id="search-clear-btn" 
+                type="button" 
+                onclick="clearSearch()" 
+                class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                <i class="fa-solid fa-circle-xmark text-sm"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 右側工具按鈕 -->
+          <div class="flex items-center gap-2 shrink-0">
+            <!-- 手機版搜尋開關 -->
+            <button 
+              onclick="toggleMobileSearch()" 
+              class="lg:hidden p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <!-- 字體縮放 (小 / 中 / 大) -->
+            <div class="hidden sm:flex items-center bg-slate-100 dark:bg-slate-800 rounded-xl p-1 border border-slate-200 dark:border-slate-700 text-xs">
+              <button onclick="setFontSize('sm')" id="btn-font-sm" class="px-2 py-1 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700">小</button>
+              <button onclick="setFontSize('base')" id="btn-font-base" class="px-2 py-1 rounded-lg bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 font-bold shadow-xs">中</button>
+              <button onclick="setFontSize('lg')" id="btn-font-lg" class="px-2 py-1 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700">大</button>
+            </div>
+
+            <!-- 列印按鈕 -->
+            <button 
+              onclick="window.print()" 
+              title="列印手冊" 
+              class="p-2.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl text-sm font-medium transition-colors">
+              <i class="fa-solid fa-print"></i>
+            </button>
+
+            <!-- 深淺色切換 -->
+            <button 
+              onclick="toggleDarkMode()" 
+              title="切換色彩模式" 
+              class="p-2.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl text-sm transition-colors">
+              <i id="theme-icon" class="fa-solid fa-moon"></i>
+            </button>
+
+            <!-- 重新鎖定按鈕 -->
+            <button 
+              onclick="lockApp()" 
+              title="安全鎖定" 
+              class="p-2.5 text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-xl text-sm transition-colors">
+              <i class="fa-solid fa-lock"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 手機版隱藏搜尋列 -->
+        <div id="mobile-search-bar" class="hidden pb-3 lg:hidden">
+          <div class="relative">
+            <input 
+              type="text" 
+              oninput="handleSearch(this.value)" 
+              placeholder="搜尋關鍵字（冷氣、因材網、體檢、段考）..." 
+              class="w-full pl-9 pr-9 py-2 text-sm bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-800 dark:text-slate-100 placeholder:text-slate-400"
+            />
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+              <i class="fa-solid fa-magnifying-glass text-xs"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== 頁籤導覽列 (處室標籤分類) ==================== -->
+    <div id="nav-tabs" class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700/80 shadow-xs sticky top-16 z-30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-1 sm:gap-2 overflow-x-auto py-2.5 no-scrollbar text-sm font-semibold select-none">
+          
+          <button onclick="setTab('all')" data-tab="all" class="tab-btn px-3.5 py-1.5 rounded-xl transition-all whitespace-nowrap flex items-center gap-2 bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm">
+            <i class="fa-solid fa-layer-group text-xs"></i>
+            <span>全部內容</span>
+            <span class="tab-count bg-white/20 dark:bg-slate-900/20 px-1.5 py-0.2 text-[11px] rounded-full">19</span>
+          </button>
+
+          <button onclick="setTab('agenda')" data-tab="agenda" class="tab-btn px-3.5 py-1.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 transition-all whitespace-nowrap flex items-center gap-1.5">
+            <i class="fa-solid fa-list-check text-slate-500"></i>
+            <span>會議程序</span>
+          </button>
+
+          <button onclick="setTab('edu')" data-tab="edu" class="tab-btn px-3.5 py-1.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 transition-all whitespace-nowrap flex items-center gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-500 inline-block"></span>
+            <span>教務處</span>
+            <span class="text-xs text-blue-600 dark:text-blue-400 font-normal">(6組)</span>
+          </button>
+
+          <button onclick="setTab('sa')" data-tab="sa" class="tab-btn px-3.5 py-1.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 transition-all whitespace-nowrap flex items-center gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+            <span>學務處</span>
+            <span class="text-xs text-emerald-600 dark:text-emerald-400 font-normal">(6組)</span>
+          </button>
+
+          <button onclick="setTab('ga')" data-tab="ga" class="tab-btn px-3.5 py-1.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 transition-all whitespace-nowrap flex items-center gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span>
+            <span>總務處</span>
+            <span class="text-xs text-amber-600 dark:text-amber-400 font-normal">(3項)</span>
+          </button>
+
+          <button onclick="setTab('guidance')" data-tab="guidance" class="tab-btn px-3.5 py-1.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 transition-all whitespace-nowrap flex items-center gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
+            <span>輔導室</span>
+          </button>
+
+          <button onclick="setTab('pta')" data-tab="pta" class="tab-btn px-3.5 py-1.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 transition-all whitespace-nowrap flex items-center gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-purple-500 inline-block"></span>
+            <span>家長會</span>
+            <span class="text-xs text-purple-600 dark:text-purple-400 font-normal">(14委員)</span>
+          </button>
+
+          <button onclick="setTab('timeline')" data-tab="timeline" class="tab-btn px-3.5 py-1.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 transition-all whitespace-nowrap flex items-center gap-1.5">
+            <i class="fa-regular fa-calendar-check text-cyan-500"></i>
+            <span>重要日程</span>
+          </button>
+
+          <button onclick="setTab('checklist')" data-tab="checklist" class="tab-btn px-3.5 py-1.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 transition-all whitespace-nowrap flex items-center gap-1.5">
+            <i class="fa-solid fa-list-check text-orange-500"></i>
+            <span>導師待辦</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 主要內容區塊 ==================== -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+      <!-- 統計資訊卡片列 (Stats Overview) -->
+      <div id="stats-cards" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-200 dark:border-slate-700 shadow-xs flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl shrink-0">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">開會時間</div>
+            <div class="text-base font-bold text-slate-800 dark:text-white">11/04 (三) 07:50</div>
+            <div class="text-[11px] text-slate-400">地點：教師午餐教室</div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-200 dark:border-slate-700 shadow-xs flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">彙整處室</div>
+            <div class="text-base font-bold text-slate-800 dark:text-white">4大處室 + 家長會</div>
+            <div class="text-[11px] text-emerald-600 dark:text-emerald-400">教務 · 學務 · 總務 · 家長</div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-200 dark:border-slate-700 shadow-xs flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">班級事務費</div>
+            <div class="text-base font-bold text-slate-800 dark:text-white">$1,000 / 班</div>
+            <div class="text-[11px] text-purple-600 dark:text-purple-400">11/4前發放 (全校23班)</div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-200 dark:border-slate-700 shadow-xs flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">即將到來焦點</div>
+            <div class="text-base font-bold text-slate-800 dark:text-white">全縣運 11/8-11</div>
+            <div class="text-[11px] text-amber-600 dark:text-amber-400">11/12 一年級新生體檢</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 快捷次級標籤過濾列 (Sub-Filters) -->
+      <div id="sub-filter-bar" class="flex flex-wrap items-center gap-2 pt-1 pb-2">
+        <span class="text-xs text-slate-400 font-medium mr-1"><i class="fa-solid fa-filter text-[10px] mr-1"></i>快捷標籤：</span>
+        <button onclick="filterBySubtag('all')" class="subtag-btn px-2.5 py-1 text-xs rounded-lg bg-emerald-600 text-white font-medium">全部組別</button>
+        <button onclick="filterBySubtag('重要法規')" class="subtag-btn px-2.5 py-1 text-xs rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 font-medium">⚖️ 重要法規/SOP</button>
+        <button onclick="filterBySubtag('重要期程')" class="subtag-btn px-2.5 py-1 text-xs rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 font-medium">📅 重要期程</button>
+        <button onclick="filterBySubtag('經費相關')" class="subtag-btn px-2.5 py-1 text-xs rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 font-medium">💰 經費/退費</button>
+        <button onclick="filterBySubtag('環境節能')" class="subtag-btn px-2.5 py-1 text-xs rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 font-medium">🌱 環境與節能</button>
+      </div>
+
+      <!-- 搜尋結果無比對時的提示 -->
+      <div id="no-search-results" class="hidden py-16 text-center">
+        <div class="w-16 h-16 mx-auto mb-3 text-slate-300 dark:text-slate-600 text-4xl">
+          <i class="fa-solid fa-folder-open"></i>
+        </div>
+        <h3 class="text-lg font-bold text-slate-600 dark:text-slate-400">找不到符合搜尋條件的內容</h3>
+        <p class="text-xs text-slate-400 mt-1">請嘗試其他關鍵字，或點擊上方「清除搜尋」</p>
+      </div>
+
+      <!-- ==================== 模組一：會議程序與開會資訊 ==================== -->
+      <section id="section-agenda" class="content-section space-y-4" data-office="agenda">
+        <div class="flex items-center gap-2 border-b-2 border-slate-300 dark:border-slate-700 pb-2">
+          <span class="p-2 rounded-xl bg-slate-800 text-white text-base"><i class="fa-solid fa-list-check"></i></span>
+          <h2 class="text-xl font-bold text-slate-800 dark:text-white">會議程序與資訊</h2>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-medium ml-auto">開會資訊</span>
+        </div>
+
+        <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="space-y-3 border-b md:border-b-0 md:border-r border-slate-100 dark:border-slate-700/80 pr-0 md:pr-6">
+              <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">會議基本資料</h3>
+              <div class="space-y-2 text-sm">
+                <div class="flex items-start gap-2">
+                  <span class="font-semibold text-slate-500 dark:text-slate-400 shrink-0">名稱：</span>
+                  <span class="font-bold text-slate-800 dark:text-white">南投國中 115學年度第1學期第2次導師會報</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="font-semibold text-slate-500 dark:text-slate-400 shrink-0">日期：</span>
+                  <span class="text-slate-800 dark:text-white font-medium">115年11月4日（星期三）</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="font-semibold text-slate-500 dark:text-slate-400 shrink-0">時間：</span>
+                  <span class="text-emerald-600 dark:text-emerald-400 font-bold">上午 07:50 起</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="font-semibold text-slate-500 dark:text-slate-400 shrink-0">地點：</span>
+                  <span class="text-slate-800 dark:text-white font-medium">教師午餐教室</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="font-semibold text-slate-500 dark:text-slate-400 shrink-0">主席：</span>
+                  <span class="text-slate-800 dark:text-white font-medium">學務處</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="md:col-span-2 space-y-3">
+              <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">會議議程規劃</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+                <div class="p-3.5 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                  <div>
+                    <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400">第一階段</span>
+                    <h4 class="font-bold text-slate-800 dark:text-white mt-1">一、主席報告</h4>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">學務處主持致詞與說明會務方向</p>
+                </div>
+
+                <div class="p-3.5 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                  <div>
+                    <span class="text-xs font-bold text-blue-600 dark:text-blue-400">第二階段</span>
+                    <h4 class="font-bold text-slate-800 dark:text-white mt-1">二、各處室報告</h4>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">1. 教務處<br>2. 學務處<br>3. 總務處<br>4. 輔導室 / 家長會</p>
+                </div>
+
+                <div class="p-3.5 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                  <div>
+                    <span class="text-xs font-bold text-purple-600 dark:text-purple-400">第三階段</span>
+                    <h4 class="font-bold text-slate-800 dark:text-white mt-1">三、導師時間</h4>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">各年級導師意見交流、班級經營問題反應與提案討論</p>
+                </div>
+
+                <div class="p-3.5 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                  <div>
+                    <span class="text-xs font-bold text-amber-600 dark:text-amber-400">第四階段</span>
+                    <h4 class="font-bold text-slate-800 dark:text-white mt-1">四、校長致詞</h4>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">校務發展方向裁示、重點工作勉勵與回應</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 模組二：教務處報告事項 ==================== -->
+      <section id="section-edu" class="content-section space-y-4" data-office="edu">
+        <div class="flex items-center gap-2 border-b-2 border-blue-500 pb-2">
+          <span class="p-2 rounded-xl bg-blue-600 text-white text-base"><i class="fa-solid fa-book-open"></i></span>
+          <h2 class="text-xl font-bold text-slate-800 dark:text-white">教務處 業務報告</h2>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-semibold ml-auto">共 6 大業務類別</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- 教務處 綜合業務 (處室重要政策) -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="重要期程">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">教務處 · 綜合重點</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">重要工作規範與行事</h3>
+              </div>
+              <span class="text-[11px] text-blue-600 dark:text-blue-400 font-medium"><i class="fa-solid fa-bullhorn mr-1"></i>校務政策</span>
+            </div>
+            
+            <ul class="space-y-2.5 text-sm leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 mt-1 shrink-0"><i class="fa-solid fa-calendar-check text-xs"></i></span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white">寒假輔導課與期末日程：</strong>
+                  <span>寒假輔導訂於 <mark class="bg-amber-100 dark:bg-amber-900/60 px-1 rounded font-bold text-amber-800 dark:text-amber-200">116年1/21(四) – 1/27(三)</mark>。1/18、1/19為第三次定期評量，<strong class="text-emerald-600 dark:text-emerald-400">1/20(三)為休業式</strong>。</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 mt-1 shrink-0"><i class="fa-solid fa-chart-line text-xs"></i></span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white">學習扶助成長測驗：</strong>
+                  <span>預計12月進行，請導師能進入科技化評量網站了解學生狀況，並督促學生進入【因材網】自主學習。</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-500 mt-1 shrink-0"><i class="fa-solid fa-triangle-exclamation text-xs"></i></span>
+                <div>
+                  <strong class="text-rose-600 dark:text-rose-400">教學正常化督導：</strong>
+                  <span>請各位老師全力協助落實：<strong>不公開公告成績單</strong>、<strong>早自習時間不做評量考試</strong>。</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 mt-1 shrink-0"><i class="fa-solid fa-chalkboard-user text-xs"></i></span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white">公開授課：</strong>
+                  <span>每位教師每學年至少皆需辦理公開授課一次。</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 mt-1 shrink-0"><i class="fa-solid fa-laptop-code text-xs"></i></span>
+                <div>
+                  <strong class="text-slate-900 dark:text-white">專科教室線上登記：</strong>
+                  <span>如有借用需求，請至校網 ➔ 教師專區 ➔ 專科教室線上登記借用。</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 教學組 -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="重要期程">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">教務處 · 教學組</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">課務與評量通知</h3>
+              </div>
+              <span class="text-[11px] text-blue-600 dark:text-blue-400 font-medium"><i class="fa-solid fa-clipboard-user mr-1"></i>課務安排</span>
+            </div>
+
+            <ol class="space-y-3 text-sm leading-relaxed list-decimal list-inside">
+              <li class="pl-1">
+                <strong class="text-slate-900 dark:text-white">調、代課與公假申報流程：</strong>
+                <p class="text-slate-600 dark:text-slate-300 text-xs mt-1 leading-normal pl-4">
+                  煩請各位老師，調、代課<span class="text-rose-600 dark:text-rose-400 font-semibold">務必提前至教學組填寫表單</span>以利排代課進行。若同仁請公假需排代課，也請務必提早知會教學組（教學組系統無法自動獲知請假資料）。
+                </p>
+              </li>
+              <li class="pl-1">
+                <strong class="text-slate-900 dark:text-white">第二次定期評量：</strong>
+                <p class="text-slate-600 dark:text-slate-300 text-xs mt-1 leading-normal pl-4">
+                  訂於 <mark class="bg-blue-100 dark:bg-blue-900/60 px-1 font-bold text-blue-800 dark:text-blue-200">12/2(三) – 12/4(四)</mark> 進行第二次定期評量，麻煩導師多督促學生勤加複習，爭取佳績。
+                </p>
+              </li>
+              <li class="pl-1">
+                <strong class="text-slate-900 dark:text-white">國語文校內賽延期：</strong>
+                <p class="text-slate-600 dark:text-slate-300 text-xs mt-1 leading-normal pl-4">
+                  因颱風及二、三年級畢旅與隔宿露營活動影響，校內國語文競賽順延至 <mark class="bg-amber-100 dark:bg-amber-900/60 px-1 font-bold text-amber-800 dark:text-amber-200">11/6(五)</mark> 舉辦，請各位導師留意時間更動。
+                </p>
+              </li>
+            </ol>
+          </div>
+
+          <!-- 課發組 (含因材網登入 4 步驟與點擊放大截圖) -->
+          <div class="content-card md:col-span-2 bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-4" data-subtag="重要法規">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">教務處 · 課發組</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">科技化評量成長測驗與因材網自主學習</h3>
+              </div>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-semibold">附圖解說明</span>
+            </div>
+
+            <div class="p-4 bg-blue-50/70 dark:bg-slate-900/60 rounded-xl border border-blue-200/60 dark:border-blue-900/40 text-sm leading-relaxed space-y-2">
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-info text-blue-600 dark:text-blue-400 mt-1"></i>
+                <div>
+                  <p><strong>成長測驗實施方式：</strong>預計在<strong>第二次段考後實施</strong>，將分年級、分科別於<strong>早自習時間</strong>拉學生出來進行測驗。測驗範圍為上一學年度的國、英、數課程，測驗對象為 115年6月篩選測驗未合格之個案學生。</p>
+                  <p class="mt-1 text-slate-600 dark:text-slate-300 text-xs">
+                    <span class="text-rose-600 dark:text-rose-400 font-bold">重要提醒：</span>本校個案學生人數佔總學生數三分之二，請導師及任課教師鼓勵學生善用平板或電腦登入因材網，觀看未通過課程影片並演練題目以提升基本學力。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 因材網 4 步驟指南卡 -->
+            <div class="space-y-3">
+              <h4 class="text-sm font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2">
+                <i class="fa-solid fa-shoe-prints text-blue-500"></i>
+                <span>學生登入因材網 4 大步驟指引（點擊圖片可放大預覽）</span>
+              </h4>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+                
+                <!-- 步驟 1 -->
+                <div class="group bg-slate-50 dark:bg-slate-750 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-400 transition-colors">
+                  <div>
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-600 text-white">步驟 1</span>
+                      <span class="text-[11px] text-slate-400">一般帳號登入</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mb-2">搜尋「教育部因材網」➔ 點選右上角「一般帳號登入」</p>
+                  </div>
+                  <div class="overflow-hidden rounded-lg border border-slate-200 dark:border-slate-600 cursor-pointer" onclick="openLightbox('images/image1.png', '步驟一：因材網首頁選取一般帳號登入')">
+                    <img src="images/image1.png" alt="步驟1" class="w-full h-32 object-cover object-top group-hover:scale-105 transition-transform duration-200" loading="lazy">
+                  </div>
+                </div>
+
+                <!-- 步驟 2 -->
+                <div class="group bg-slate-50 dark:bg-slate-750 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-400 transition-colors">
+                  <div>
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-600 text-white">步驟 2</span>
+                      <span class="text-[11px] text-slate-400">選取學校與帳密</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mb-2">選南投縣、南投市、南投國中，帳號(學號)、密碼(身分證)</p>
+                  </div>
+                  <div class="overflow-hidden rounded-lg border border-slate-200 dark:border-slate-600 cursor-pointer" onclick="openLightbox('images/image2.png', '步驟二：選取縣市與輸入學號及身分證密碼')">
+                    <img src="images/image2.png" alt="步驟2" class="w-full h-32 object-contain bg-slate-100 group-hover:scale-105 transition-transform duration-200" loading="lazy">
+                  </div>
+                </div>
+
+                <!-- 步驟 3 -->
+                <div class="group bg-slate-50 dark:bg-slate-750 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-400 transition-colors">
+                  <div>
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-600 text-white">步驟 3</span>
+                      <span class="text-[11px] text-slate-400">點選科技化評量</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mb-2">登入後點選左下方選單中的「科技化評量」專區</p>
+                  </div>
+                  <div class="overflow-hidden rounded-lg border border-slate-200 dark:border-slate-600 cursor-pointer" onclick="openLightbox('images/image3.png', '步驟三：點選左側功能選單「科技化評量」')">
+                    <img src="images/image3.png" alt="步驟3" class="w-full h-32 object-cover object-left-top group-hover:scale-105 transition-transform duration-200" loading="lazy">
+                  </div>
+                </div>
+
+                <!-- 步驟 4 -->
+                <div class="group bg-slate-50 dark:bg-slate-750 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-400 transition-colors">
+                  <div>
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-600 text-white">步驟 4</span>
+                      <span class="text-[11px] text-slate-400">進入自主學習</span>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-300 mb-2">選取「202605」、數學/英語/國語文108展開補救</p>
+                  </div>
+                  <div class="overflow-hidden rounded-lg border border-slate-200 dark:border-slate-600 cursor-pointer" onclick="openLightbox('images/image4.png', '步驟四：選取期程與科目進行未通過內容之自主學習')">
+                    <img src="images/image4.png" alt="步驟4" class="w-full h-32 object-cover object-left-top group-hover:scale-105 transition-transform duration-200" loading="lazy">
+                  </div>
+                </div>
+
+              </div>
+              <p class="text-[11px] text-slate-400 italic">註：教師登入因材網請選擇「教育雲端帳號」登入。</p>
+            </div>
+          </div>
+
+          <!-- 註冊組 (升學、讀卡、註冊名額等9項宣導) -->
+          <div class="content-card md:col-span-2 bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-4" data-subtag="重要法規">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">教務處 · 註冊組</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">學籍、讀卡、升學與輔導相關提醒（共9點）</h3>
+              </div>
+              <span class="text-[11px] text-blue-600 dark:text-blue-400 font-medium"><i class="fa-solid fa-graduation-cap mr-1"></i>學籍考務</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+              
+              <!-- 1. 畢業大頭照 -->
+              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+                <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
+                  <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">1</span>
+                  三年級大頭照拍攝通知
+                </div>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  三年級在校拍攝圓滿完成。班上若有已繳費尚未拍攝的同學，請通知儘速至<strong>國際照相館</strong>補拍（需著制服），並將電子檔交至註冊組。老師若尚未拍攝請於 <strong>12月底前</strong> 至國際照相館拍攝完成。
+                </p>
+              </div>
+
+              <!-- 2. 註冊費催繳 -->
+              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+                <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
+                  <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">2</span>
+                  尚未完成註冊繳費關懷
+                </div>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  全校尚有 <strong>10位學生</strong> 尚未完成註冊（1年級2位、2年級4位、3年級4位，10/27查台銀）。請導師了解家庭經濟情況，必要時可向學務處申請<strong>仁愛基金補助</strong>。
+                </p>
+              </div>
+
+              <!-- 3. 段考與模擬考讀卡 -->
+              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+                <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
+                  <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">3</span>
+                  讀卡考科與劃卡規範
+                </div>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  監考老師<strong>務必確實清點答案卡張數</strong>。請導師提醒學生座號劃卡包含十位數與個位數（例：5號需劃05）。段考當天班長請至註冊組登記缺考。讀卡老師請<strong>務必勾選「缺考」再讀卡</strong>。第二次段考為 <strong>12/2(三)、12/3(四)</strong>。
+                </p>
+              </div>
+
+              <!-- 4. 模擬考題本與答案卡 -->
+              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+                <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
+                  <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">4</span>
+                  三年級模擬考試題本保管
+                </div>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  模擬考題本與卡片為學生自費購買，教務處無備用本。請國三導師與監考老師務必將<strong>缺考學生的題本卡留在班級</strong>保管。三年級第2次複習考(1-4冊)預定於 <strong>12/23(三)-12/24(四)</strong> 辦理。
+                </p>
+              </div>
+
+              <!-- 5. 銷過與八大領域 -->
+              <div class="p-3 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-800">
+                <div class="font-bold text-amber-900 dark:text-amber-200 flex items-center gap-1.5 mb-1">
+                  <span class="w-5 h-5 rounded-full bg-amber-200 dark:bg-amber-900 text-amber-800 dark:text-amber-300 flex items-center justify-center text-xs font-bold">5</span>
+                  會考資料校正與畢業資格警訊
+                </div>
+                <p class="text-amber-950 dark:text-amber-100 leading-relaxed">
+                  近期開始國三會考及免試入學資料校核，請督促學生儘速銷過。特別提醒：<strong>八大領域中有五大領域不及格者，將無法領取畢業證書</strong>（僅發修業證明書），請導師多加輔導關心。
+                </p>
+              </div>
+
+              <!-- 6. 轉學生編班機制 -->
+              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+                <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
+                  <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">6</span>
+                  轉學生縣府常態編班說明
+                </div>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  轉入生依縣府統一編班程式進行跑班分配（依班級人數含特殊生抵減，同人數由亂數決定），故若班級人數較少，可能連續獲派 2 位以上轉入生。
+                </p>
+              </div>
+
+              <!-- 7. 寒輔時間表 -->
+              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+                <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
+                  <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">7</span>
+                  寒輔意願調查預告
+                </div>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  寒假輔導課時間：<strong>116年1/21(四) – 1/27(三)</strong> 08:00-11:50（每日4節課半天，07:50到校），共計 5 天。預計於 11月中旬 發放意願調查單。
+                </p>
+              </div>
+
+              <!-- 8. 會考陪考與 9. 五專免試 -->
+              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+                <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
+                  <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">8-9</span>
+                  會考陪同考場 & 五專服務學習積分
+                </div>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  • <strong>會考陪同：</strong>因考區考場防範糾紛，南投高中考場中心要求導師每節陪同學生至教室外，待廣播後再行離開。<br>
+                  • <strong>五專積分：</strong>116年「五專優先免試」服務學習每小時0.25分（上限15分/60小時）；115年「五專聯合免試」每8小時1分（上限7分/56小時）。
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 設備組 -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="重要期程">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">教務處 · 設備組</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">閱讀推廣與專科教室登記</h3>
+              </div>
+              <span class="text-[11px] text-blue-600 dark:text-blue-400 font-medium"><i class="fa-solid fa-book mr-1"></i>圖書教學</span>
+            </div>
+
+            <ul class="space-y-2.5 text-xs sm:text-sm leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-500 font-bold shrink-0">1.</span>
+                <div>
+                  <strong>校內科展報名：</strong>本校校內科展訂於 <mark class="bg-amber-100 dark:bg-amber-900/60 px-1 font-bold">115年11月5日(四)前</mark> 繳交報名表，一、二年級每班至少一件，三年級自由參加。
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 font-bold shrink-0">2.</span>
+                <div>
+                  <strong>客家電視優質公播：</strong>兒少節目《自學，學到哪裡去？》提供校園免費公播，歡迎至校網最新消息點閱觀看。
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 font-bold shrink-0">3.</span>
+                <div>
+                  <strong>專科教室線上借用：</strong>2F家政教室、3F家政教室、舞蹈教室可透過校網教師專區線上系統預約登記借用。
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 font-bold shrink-0">4.</span>
+                <div>
+                  <strong>週四晨光閱讀：</strong>感謝一、二年級導師全力支持每週四晨讀。<strong>段考前兩週暫停晨讀</strong>供班級衝刺備考。
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-500 font-bold shrink-0">5.</span>
+                <div>
+                  <strong>班級書箱推廣：</strong>借期借量皆不限，請圖書股長踴躍至圖書館整箱借用，一人一冊方便晨讀，無逾期罰款困擾。
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 資訊組 -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="重要法規">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">教務處 · 資訊組</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">智慧教室、平板設備與資安宣導</h3>
+              </div>
+              <span class="text-[11px] text-blue-600 dark:text-blue-400 font-medium"><i class="fa-solid fa-network-wired mr-1"></i>資訊科技</span>
+            </div>
+
+            <ul class="space-y-2 text-xs sm:text-sm leading-relaxed">
+              <li>
+                <strong>1. 康軒雲平台帳密建置完成：</strong>涵蓋五大考科，學生帳號為學號，密碼為「生日月日4碼+身分證末4碼」（例：03086789）。教師預設為公務帳密。
+              </li>
+              <li>
+                <strong>2. 一師一載具・生生有平板：</strong>iPad與充電車已配置各班。<strong>請各班選拔 2 位平板股長</strong>負責借還、充電及確認上鎖。
+              </li>
+              <li>
+                <strong class="text-rose-600 dark:text-rose-400">3. 86吋大屏請連「有線(乙太)網路」：</strong>請告知負責同學切勿擅自切換無線WiFi，以免頻寬受限造成卡頓。
+              </li>
+              <li>
+                <strong>4. 教師借用平板需常連網：</strong>借用之iPad請連「PAD」（免密碼），縣府將查核使用率。
+              </li>
+              <li>
+                <strong>5. LoiLoNote 軟體授權：</strong>縣府持續付費支援，師生帳密已建置，需使用同仁請洽資訊組。
+              </li>
+              <li>
+                <strong>6. 學生 OpenID 查詢：</strong>可至校網學生專區輸入資料查詢，密碼將寄發至學校 Google 信箱。
+              </li>
+              <li>
+                <strong class="text-rose-600 dark:text-rose-400">7. 中毒緊急應變：</strong>若電腦疑似中毒，請<strong>「先拔除網路線」</strong>並立即通報資訊組。
+              </li>
+              <li class="p-2.5 bg-slate-100 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-600">
+                <strong class="text-emerald-600 dark:text-emerald-400">8. 資安宣導「三不原則」：</strong>
+                <span class="text-xs text-slate-600 dark:text-slate-300 ml-2">① 來歷不明網址「不點入」 ｜ ② 不信任軟體「不下載」 ｜ ③ 網路未證實資訊「不要太相信」</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== 模組三：學務處報告事項 ==================== -->
+      <section id="section-sa" class="content-section space-y-4" data-office="sa">
+        <div class="flex items-center gap-2 border-b-2 border-emerald-500 pb-2">
+          <span class="p-2 rounded-xl bg-emerald-600 text-white text-base"><i class="fa-solid fa-shield-heart"></i></span>
+          <h2 class="text-xl font-bold text-slate-800 dark:text-white">學務處 業務報告</h2>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-semibold ml-auto">共 6 大組別業務</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- 訓育組 -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="重要期程">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">學務處 · 訓育組</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">競賽、活動與戶外教育致謝</h3>
+              </div>
+              <span class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium"><i class="fa-solid fa-music mr-1"></i>活動推展</span>
+            </div>
+
+            <ul class="space-y-2 text-xs sm:text-sm leading-relaxed">
+              <li>
+                <strong>1. 115學年度全國學生音樂比賽南投縣初賽（文化局演藝廳）：</strong>
+                <ul class="pl-4 list-disc text-slate-600 dark:text-slate-300 text-xs mt-1 space-y-1">
+                  <li>揚琴個人賽：<strong>11月11日(三) 13:00-17:00</strong></li>
+                  <li>絲竹室內樂合奏：<strong>11月12日(四) 13:00-17:00</strong></li>
+                  <li>口琴四重奏：<strong>11月17日(二) 10:00-12:00</strong></li>
+                </ul>
+              </li>
+              <li>
+                <strong>2. 教室佈置比賽：</strong><strong>11月6日(五)</strong> 早上前四節皆可評分，評分表最慢 12:00 交回訓育組，感謝導師辛勞！
+              </li>
+              <li>
+                <strong>3. 仁愛基金：</strong>10月份共受理審查 1 人申請。
+              </li>
+              <li>
+                <strong>4. 一二年級社團正式課程要求：</strong>請勿讓學生遲到社團；若需個別晤談留人，務必以紙條告知社團老師掌握出缺席。
+              </li>
+              <li class="p-2.5 bg-emerald-50 dark:bg-emerald-950/40 rounded-xl border border-emerald-200 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200">
+                <strong>5. 畢旅與隔宿致謝：</strong>三年級畢業旅行（10/21-23）、二年級隔宿露營（10/27-28）皆圓滿完成，學務處由衷感謝全體隨隊導師無私奉獻！
+              </li>
+            </ul>
+          </div>
+
+          <!-- 生教組 (重點法規：監視器、陳述書、帶回管教) -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="重要法規">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">學務處 · 生教組</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">生活常規、法規與輔導管教規範</h3>
+              </div>
+              <span class="text-[11px] text-rose-600 dark:text-rose-400 font-bold"><i class="fa-solid fa-scale-balanced mr-1"></i>法規遵循</span>
+            </div>
+
+            <div class="space-y-2 text-xs sm:text-sm leading-relaxed">
+              <p><strong>1. 手機集中保管：</strong>近期未繳手機情況較多，請導師嚴格留意，手機申請書填妥請速送學務處。</p>
+              
+              <!-- 監視器調閱規範 -->
+              <div class="p-2.5 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-800 text-amber-950 dark:text-amber-200 text-xs">
+                <strong>2. 校園監視器調閱嚴格規範（個資法）：</strong>
+                監視器錄影含人臉屬於個資，<strong>嚴禁隨意調閱</strong>。僅在符合「特定目的（維護校園安全、保障師生）」與「比例原則」下始依法調閱（如不當管教、霸凌、失竊、司法偵查等）。
+              </div>
+
+              <p><strong>3. 學生外出安全：</strong>同學身體不適需臨時外出，<strong>導師簽准前務必先致電家長確認</strong>。</p>
+              <p><strong>4. 請假時效：</strong>請於 <strong>3日內</strong> 將假卡送至學務處，以免產生郵寄掛號通知單工本（8元）。</p>
+              <p class="text-rose-600 dark:text-rose-400 font-semibold"><strong>5. 杜絕電子菸：</strong>違規吸食或攜帶電子菸者，學校將依法<strong>直接行文衛生局裁罰</strong>。</p>
+
+              <!-- 陳述書規範與帶回管教 -->
+              <div class="p-2.5 bg-slate-100 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-600 text-xs space-y-1.5">
+                <div class="font-bold text-slate-900 dark:text-white"><i class="fa-solid fa-file-pen text-emerald-500 mr-1"></i>縣府來函：學生陳述書／自省書規範</div>
+                <ul class="list-disc pl-4 space-y-1 text-slate-600 dark:text-slate-300">
+                  <li>須預先告知家長；基於受教權，<strong>不得於上課時間要求書寫</strong>。</li>
+                  <li>不得預設立場強迫書寫，亦不得因拒寫而逕自論斷犯錯。</li>
+                  <li><strong>「陳述書」不得併同作為獎懲建議單。</strong></li>
+                  <li>特殊學生應由特教/輔導教師陪同或以口述代筆紀錄。</li>
+                  <li><strong>學生帶回管教規定：</strong>每次以 <strong>5日為限</strong>，應與監護人面談或家訪，返校後視需要補課。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 體育組 -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="重要期程">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">學務處 · 體育組</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">全縣運動會賽程通報</h3>
+              </div>
+              <span class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium"><i class="fa-solid fa-medal mr-1"></i>全縣賽程</span>
+            </div>
+
+            <div class="p-4 bg-emerald-50 dark:bg-emerald-950/40 rounded-xl border border-emerald-200 dark:border-emerald-800 text-sm">
+              <div class="flex items-center gap-2 font-bold text-emerald-800 dark:text-emerald-200 text-base mb-1">
+                <i class="fa-solid fa-person-running"></i> 115年南投縣全縣運動會
+              </div>
+              <p class="text-slate-700 dark:text-slate-300">
+                訂於 <mark class="bg-emerald-200 dark:bg-emerald-900 px-1.5 py-0.5 rounded font-bold text-emerald-900 dark:text-emerald-100">115年11月8日(星期日) 至 11月11日(星期三)</mark> 辦理。請全校師生共同為參賽選手加油打氣！
+              </p>
+            </div>
+          </div>
+
+          <!-- 衛生組 -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="環境節能">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">學務處 · 衛生組</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">環境整潔、競賽與登革熱防護</h3>
+              </div>
+              <span class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium"><i class="fa-solid fa-leaf mr-1"></i>環教推動</span>
+            </div>
+
+            <ul class="space-y-2 text-xs sm:text-sm leading-relaxed">
+              <li><strong>1. 掃具與電池回收：</strong>每天早上 <strong>8:00</strong> 領取掃具。廢乾電池回收設在學務處。</li>
+              <li><strong>2. 校園美景攝影比賽預告：</strong><strong>12/7(一)</strong> 截止，二年級各班至少一件，每人至多三件（一三年級自由參賽）。</li>
+              <li><strong>3. 舊物再用提案家學習單：</strong><strong>11/27(五)</strong> 早自習觀看影音宣導，一年級各班於 12/7 前至少交回一份。</li>
+              <li><strong>4. 掃具與洗衣粉節約：</strong>請導師提醒學生珍惜適量使用，避免浪費與清潔排水困擾。</li>
+              <li class="p-2.5 bg-green-50 dark:bg-green-950/40 rounded-xl border border-green-200 dark:border-green-800 text-xs">
+                <strong>5. 花臺美化綠化—有機蔬菜種植：</strong>各班善用花台種植有機蔬菜，收成於 <strong>12/30(三)前</strong> 知會學務處認定拍照，可提報 <strong>10位同學敘嘉獎一次或銷警告一支</strong>！
+              </li>
+              <li><strong>6. 空污指標旗：</strong>圖書館前廣場每天依環保署南投站數據懸掛空污旗幟。</li>
+              <li><strong>7. 防治登革熱：</strong>容器使用完畢後落實倒置處理，杜絕積水孳生孑孓。</li>
+            </ul>
+          </div>
+
+          <!-- 健康中心 (11/12新生體檢重要事項) -->
+          <div class="content-card md:col-span-2 bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-4" data-subtag="重要期程">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">學務處 · 健康中心</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">流感疫苗、11/12 一年級新生健康檢查指引</h3>
+              </div>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 font-bold">11/12 焦點</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+              <div class="p-3.5 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2">
+                <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                  <i class="fa-solid fa-syringe text-emerald-500"></i> 流感疫苗施打與衛生防護
+                </div>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  • 10/16 全校流感疫苗施打完畢。自行補打者請至健康中心領取「補接種通知單」持健保卡至院所補種。<br>
+                  • <strong>視力不良通知單回條：</strong>部分學生尚未就醫複查，請導師持續提醒催繳。<br>
+                  • <span class="text-rose-600 dark:text-rose-400 font-semibold">重要提醒：</span>健康中心依法<strong>無法提供口服成藥</strong>（如止痛、退燒藥），個人常備藥請自備。
+                </p>
+              </div>
+
+              <div class="p-3.5 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-800 space-y-2">
+                <div class="font-bold text-amber-900 dark:text-amber-200 flex items-center gap-1.5">
+                  <i class="fa-solid fa-stethoscope text-amber-600"></i> 11/12(四) 一年級新生體檢全面須知
+                </div>
+                <ul class="text-slate-700 dark:text-slate-300 space-y-1 list-disc pl-4 text-xs leading-relaxed">
+                  <li><strong>時間與順序：</strong><strong>11:30 起</strong> 由 7年1班 開始依序受檢（南基醫院團隊）。</li>
+                  <li><strong>地點：</strong>活動中心；<strong>心電圖：</strong>舞台旁音控室（醫師判定後檢測）。</li>
+                  <li><strong>服裝要求：</strong>當日一律<strong>穿著體育服</strong>，非必要勿請假。</li>
+                  <li><strong>口腔牙檢：</strong>請叮嚀學生<strong>早餐與午餐後落實潔牙</strong>。</li>
+                  <li><strong>導師與任課配合：</strong>班長提醒任課老師隨班至現場維持秩序；體檢報告發回請家長簽名後再由導師協助回收。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 午餐秘書 (含異物客訴 SOP 流程圖) -->
+          <div class="content-card md:col-span-2 bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="重要法規">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">學務處 · 午餐秘書</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">午推會最新規定與異物通報客訴 SOP</h3>
+              </div>
+              <span class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium"><i class="fa-solid fa-utensils mr-1"></i>營養午餐</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+              <div class="space-y-2 text-slate-600 dark:text-slate-300">
+                <p><strong>1. 安得烈食物箱：</strong>七年級 2 件申請已寄出，審核約 30-45 天，通過後書面通知。</p>
+                <div class="p-2.5 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700 text-xs leading-relaxed">
+                  <strong class="text-slate-900 dark:text-white">2. 10/15 午推會重大決議：</strong>
+                  <ul class="list-disc pl-4 mt-1 space-y-1">
+                    <li>午餐結餘款<strong>須依規定全數繳回縣府</strong>，無法作為校慶或包糕粽加菜經費。</li>
+                    <li>戶外教學僅行程含「午餐自理」方可做餐盒補貼；若由廠商團膳供餐則不可做餐盒，經費繳回。</li>
+                  </ul>
+                </div>
+                <p><strong>3. 臨時調退餐：</strong>請合作社代表<strong>務必於當日 08:15 前</strong>在午秘桌上異動表確實登記。</p>
+                <p><strong>4. 抬餐衛生：</strong>嚴禁抬餐同學於抬餐處掀開鐵蓋觀看菜色，以防昆蟲異物掉入。</p>
+              </div>
+
+              <!-- 異物客訴 SOP 流程圖卡 -->
+              <div class="p-3.5 bg-emerald-50/70 dark:bg-slate-900/60 rounded-xl border border-emerald-200 dark:border-emerald-900/40 flex flex-col justify-between">
+                <div>
+                  <div class="font-bold text-emerald-900 dark:text-emerald-200 text-xs sm:text-sm flex items-center gap-1.5 mb-2">
+                    <i class="fa-solid fa-clipboard-check text-emerald-600"></i> ※ 午餐異物（毛髮、鐵刷、塑膠等）處理 SOP
+                  </div>
+                  
+                  <div class="space-y-2 mt-2">
+                    <div class="flex items-center gap-2 p-2 bg-white dark:bg-slate-800 rounded-lg shadow-2xs border border-emerald-100 dark:border-slate-700">
+                      <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs shrink-0">1</span>
+                      <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">由導師初步判斷是否需通報客訴</span>
+                    </div>
+                    <div class="flex items-center gap-2 p-2 bg-white dark:bg-slate-800 rounded-lg shadow-2xs border border-emerald-100 dark:border-slate-700">
+                      <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs shrink-0">2</span>
+                      <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">將異物連同飯菜（<span class="text-rose-500 font-bold underline">不要拿起</span>）完整拍照存證</span>
+                    </div>
+                    <div class="flex items-center gap-2 p-2 bg-white dark:bg-slate-800 rounded-lg shadow-2xs border border-emerald-100 dark:border-slate-700">
+                      <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs shrink-0">3</span>
+                      <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">合作社代表將異物端送交至<strong>午餐秘書</strong>登記換餐</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-[11px] text-slate-400 mt-2 text-right">保障學生飲食安全與供應商履約品質</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== 模組四：總務處報告事項 ==================== -->
+      <section id="section-ga" class="content-section space-y-4" data-office="ga">
+        <div class="flex items-center gap-2 border-b-2 border-amber-500 pb-2">
+          <span class="p-2 rounded-xl bg-amber-600 text-white text-base"><i class="fa-solid fa-wrench"></i></span>
+          <h2 class="text-xl font-bold text-slate-800 dark:text-white">總務處 業務報告</h2>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 font-semibold ml-auto">校舍工程 · 節約能源</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          
+          <!-- 目前工作 -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="重要期程">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300">總務處 · 目前工作</span>
+              </div>
+              <span class="text-[11px] text-amber-600 dark:text-amber-400 font-medium">工程進度</span>
+            </div>
+
+            <ol class="space-y-2.5 text-xs sm:text-sm list-decimal list-inside leading-relaxed text-slate-700 dark:text-slate-300">
+              <li class="pl-1">
+                <strong>115操場跑道整建：</strong>10/19開工，工程計畫預定明年 <strong>2月中旬完工</strong>。
+              </li>
+              <li class="pl-1">
+                <strong>A棟大樓老舊廁所整修：</strong>教育部核定 114-116年工程計畫前三次招標不順，預定 <strong>11/11辦理第四招</strong>。
+              </li>
+              <li class="pl-1">
+                <strong>B棟無障礙扶手樓梯：</strong>已全數驗收完成。
+              </li>
+              <li class="pl-1">
+                <strong>消防採水口工程經費：</strong>消防水管爆裂後持續向縣府申請專案經費，依法維持校園消防安全。
+              </li>
+            </ol>
+          </div>
+
+          <!-- 即將進行 -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="重要期程">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300">總務處 · 即將進行</span>
+              </div>
+              <span class="text-[11px] text-rose-500 font-bold">11/4 施工</span>
+            </div>
+
+            <div class="space-y-3 text-xs sm:text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+              <div class="p-3 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-800">
+                <strong class="text-amber-950 dark:text-amber-200 block mb-1">● 11/4(三) 校園樹木全面修剪與移除：</strong>
+                <p class="text-xs">
+                  經費已通過，廠商預定 <strong>11月4日(三)進場施工</strong>：包含警衛室旁樟樹、風鈴木、桃花心木、車道旁階梯欒樹、苦楝、升旗處欒樹、大門過高樟樹、祖祠路旁樟樹修剪及龍眼/陰香移除，漳和國小側與校門桃花心木旁枝修剪。
+                </p>
+              </div>
+
+              <div>
+                <strong>● 視聽教室氣密窗門：</strong>即將完成決標，決標後隨即展開施工。
+              </div>
+            </div>
+          </div>
+
+          <!-- 共同配合事項 (節電、冷氣卡、報修、保全) -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="環境節能">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300">總務處 · 配合事項</span>
+              </div>
+              <span class="text-[11px] text-amber-600 dark:text-amber-400 font-medium">日常管理</span>
+            </div>
+
+            <ul class="space-y-2 text-xs sm:text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+              <li>
+                <strong class="text-rose-600 dark:text-rose-400">1. 冷氣卡收回與節約能源：</strong>10月底已收回冷氣卡與遙控器。教育部補助款已用盡，11月起請全校配合節能。
+              </li>
+              <li>
+                <strong>2. 如廁關燈：</strong>宣導上完廁所隨手關燈（晚上偶有廁所亮燈），打掃班級放學前請巡檢抽風機與電燈。
+              </li>
+              <li>
+                <strong>3. 放學設備關閉：</strong>大屏、門窗、電扇務必確實關閉上鎖；教師區壁扇與花台燈常有遺漏，請事務股長最後巡檢。
+              </li>
+              <li>
+                <strong>4. 物品修繕申請：</strong>至總務處窗口登記。若因隨意玩樂人為破壞，需自負賠償復原責任。
+              </li>
+              <li>
+                <strong>5. 晚間保全設定：</strong>最後離開同仁務必確認啟動保全，保全空窗期若生財損保全公司恕不負責。
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== 模組五：輔導室報告事項 ==================== -->
+      <section id="section-guidance" class="content-section space-y-4" data-office="guidance">
+        <div class="flex items-center gap-2 border-b-2 border-rose-500 pb-2">
+          <span class="p-2 rounded-xl bg-rose-600 text-white text-base"><i class="fa-solid fa-heart"></i></span>
+          <h2 class="text-xl font-bold text-slate-800 dark:text-white">輔導室 業務報告</h2>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 font-semibold ml-auto">學生關懷 · 諮商輔導</span>
+        </div>
+
+        <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs">
+          <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+            <div class="w-14 h-14 rounded-2xl bg-rose-50 dark:bg-rose-950/60 text-rose-500 flex items-center justify-center text-2xl shrink-0">
+              <i class="fa-regular fa-comment-dots"></i>
+            </div>
+            <div class="space-y-1">
+              <h3 class="font-bold text-slate-800 dark:text-white text-base">輔導業務報告（暫無提案）</h3>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                本月份導師會報輔導室暫無特別紙本提報事項。若導師在班級經營、特殊生安置、認輔晤談或高風險通報上有任何諮詢需求，歡迎隨時洽詢輔導室各組夥伴。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 模組六：家長會長報告事項與名冊 ==================== -->
+      <section id="section-pta" class="content-section space-y-4" data-office="pta">
+        <div class="flex items-center gap-2 border-b-2 border-purple-500 pb-2">
+          <span class="p-2 rounded-xl bg-purple-600 text-white text-base"><i class="fa-solid fa-people-roof"></i></span>
+          <h2 class="text-xl font-bold text-slate-800 dark:text-white">家長會長報告 & 委員會名冊</h2>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 font-semibold ml-auto">115學年度名冊</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          
+          <!-- 會務與經費報告 -->
+          <div class="content-card md:col-span-1 bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="經費相關">
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">家長會 · 會務報告</span>
+              </div>
+              <span class="text-[11px] text-purple-600 dark:text-purple-400 font-medium">經費撙節</span>
+            </div>
+
+            <div class="space-y-2.5 text-xs sm:text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+              <p>
+                <strong>1. 會務運作：</strong>10/15代表大會胡銘隆當選本校115學年度會長。本屆委員共14位，經費捉襟見肘，特殊支出請先請示會長。若班級尚無委員，歡迎導師多邀請熱心家長加入。
+              </p>
+              <div class="p-3 bg-purple-50 dark:bg-purple-950/40 rounded-xl border border-purple-200 dark:border-purple-800">
+                <strong class="text-purple-900 dark:text-purple-200 block mb-1">2. 班級事務費發放：</strong>
+                <p class="text-xs">
+                  每班每學年 <strong>1,000元</strong>（全校發放二萬三千元），預計於 <strong>11/4前發放</strong>，供班級布置妥善運用。
+                </p>
+              </div>
+              <p>
+                <strong>3. 兄姐退家長會費：</strong>扣除紫南宮補助名單共 <strong>35位</strong>，後續將簽名退還100元。
+              </p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">
+                <strong>4. 年度預算規劃：</strong>包含小六招生禮品、藍田書院祈福（5,000元）、國小畢典禮物、畢業生禮品、退休禮金等，校慶午餐供餐模式視校長意見調整。
+              </p>
+            </div>
+          </div>
+
+          <!-- 家長委員名冊 (表格呈現) -->
+          <div class="content-card md:col-span-2 bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3" data-subtag="經費相關">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-700 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">115學年度名冊</span>
+                <h3 class="font-bold text-slate-800 dark:text-white">南投國中家長委員會委員名冊</h3>
+              </div>
+              <span class="text-xs text-slate-400">共 14 位委員（含會長、常委）</span>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs sm:text-sm text-left border-collapse">
+                <thead>
+                  <tr class="bg-slate-100 dark:bg-slate-750 text-slate-600 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
+                    <th class="py-2.5 px-3 font-bold text-center w-12">編號</th>
+                    <th class="py-2.5 px-3 font-bold text-center w-24">職稱</th>
+                    <th class="py-2.5 px-3 font-bold">委員姓名</th>
+                    <th class="py-2.5 px-3 font-bold text-center w-20">年級 / 班</th>
+                    <th class="py-2.5 px-3 font-bold">學生姓名</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 dark:divide-slate-700/60 text-slate-700 dark:text-slate-300">
+                  <tr class="bg-purple-50/50 dark:bg-purple-950/20 font-semibold">
+                    <td class="py-2 px-3 text-center text-purple-700 dark:text-purple-300 font-bold">1</td>
+                    <td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded bg-purple-600 text-white text-xs">會 長</span></td>
+                    <td class="py-2 px-3 font-bold text-purple-900 dark:text-purple-200">胡銘隆</td>
+                    <td class="py-2 px-3 text-center">一 年 5 班</td>
+                    <td class="py-2 px-3">胡芷瑜</td>
+                  </tr>
+                  <tr class="bg-purple-50/30 dark:bg-purple-950/10">
+                    <td class="py-2 px-3 text-center text-purple-600">2</td>
+                    <td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs">常 委</span></td>
+                    <td class="py-2 px-3 font-medium">簡恭聖</td>
+                    <td class="py-2 px-3 text-center">二 年 7 班</td>
+                    <td class="py-2 px-3">簡密緹</td>
+                  </tr>
+                  <tr class="bg-purple-50/30 dark:bg-purple-950/10">
+                    <td class="py-2 px-3 text-center text-purple-600">3</td>
+                    <td class="py-2 px-3 text-center"><span class="px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs">常 委</span></td>
+                    <td class="py-2 px-3 font-medium">單繶心</td>
+                    <td class="py-2 px-3 text-center">三 年 8 班</td>
+                    <td class="py-2 px-3">連子瑆</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 text-center text-slate-400">4</td>
+                    <td class="py-2 px-3 text-center text-slate-500">委 員</td>
+                    <td class="py-2 px-3 font-medium">易秀蓮</td>
+                    <td class="py-2 px-3 text-center">一 年 1 班</td>
+                    <td class="py-2 px-3">簡岑芳</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 text-center text-slate-400">5</td>
+                    <td class="py-2 px-3 text-center text-slate-500">委 員</td>
+                    <td class="py-2 px-3 font-medium">劉美珠 <span class="text-xs text-slate-400">(阿嬤)</span></td>
+                    <td class="py-2 px-3 text-center">一 年 6 班</td>
+                    <td class="py-2 px-3">黃軒翊</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 text-center text-slate-400">6</td>
+                    <td class="py-2 px-3 text-center text-slate-500">委 員</td>
+                    <td class="py-2 px-3 font-medium">陳育鈴</td>
+                    <td class="py-2 px-3 text-center">一 年 7 班</td>
+                    <td class="py-2 px-3">黃祈恩</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 text-center text-slate-400">7</td>
+                    <td class="py-2 px-3 text-center text-slate-500">委 員</td>
+                    <td class="py-2 px-3 font-medium">胡素梅 <span class="text-xs text-slate-400">(阿嬤)</span></td>
+                    <td class="py-2 px-3 text-center">二 年 1 班</td>
+                    <td class="py-2 px-3">張竤鈞</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 text-center text-slate-400">8</td>
+                    <td class="py-2 px-3 text-center text-slate-500">委 員</td>
+                    <td class="py-2 px-3 font-medium">張坊榳 <span class="text-xs text-slate-400">(阿嬤)</span></td>
+                    <td class="py-2 px-3 text-center">二 年 2 班</td>
+                    <td class="py-2 px-3">林羿禎</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 text-center text-slate-400">9</td>
+                    <td class="py-2 px-3 text-center text-slate-500">委 員</td>
+                    <td class="py-2 px-3 font-medium">陳明石</td>
+                    <td class="py-2 px-3 text-center">二 年 3 班</td>
+                    <td class="py-2 px-3">陳羿緁</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 text-center text-slate-400">10</td>
+                    <td class="py-2 px-3 text-center text-slate-500">委 員</td>
+                    <td class="py-2 px-3 font-medium">曾筱茹</td>
+                    <td class="py-2 px-3 text-center">二 年 7 班</td>
+                    <td class="py-2 px-3">張羽瑄</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 text-center text-slate-400">11</td>
+                    <td class="py-2 px-3 text-center text-slate-500">委 員</td>
+                    <td class="py-2 px-3 font-medium">林彥廷 <span class="text-xs text-slate-400">(阿嬤)</span></td>
+                    <td class="py-2 px-3 text-center">三 年 3 班</td>
+                    <td class="py-2 px-3">陳昱潣</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 text-center text-slate-400">12</td>
+                    <td class="py-2 px-3 text-center text-slate-500">委 員</td>
+                    <td class="py-2 px-3 font-medium">陳建宇</td>
+                    <td class="py-2 px-3 text-center">三 年 5 班</td>
+                    <td class="py-2 px-3">陳永璋</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 text-center text-slate-400">13</td>
+                    <td class="py-2 px-3 text-center text-slate-500">委 員</td>
+                    <td class="py-2 px-3 font-medium">張育誠</td>
+                    <td class="py-2 px-3 text-center">三 年 6 班</td>
+                    <td class="py-2 px-3">張珺璽</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 text-center text-slate-400">14</td>
+                    <td class="py-2 px-3 text-center text-slate-500">委 員</td>
+                    <td class="py-2 px-3 font-medium">李誌新</td>
+                    <td class="py-2 px-3 text-center">三 年 9 班</td>
+                    <td class="py-2 px-3">李泓逸</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== 模組七：全期重要期程一覽 (Timeline) ==================== -->
+      <section id="section-timeline" class="content-section space-y-4" data-office="timeline">
+        <div class="flex items-center gap-2 border-b-2 border-cyan-500 pb-2">
+          <span class="p-2 rounded-xl bg-cyan-600 text-white text-base"><i class="fa-regular fa-calendar-check"></i></span>
+          <h2 class="text-xl font-bold text-slate-800 dark:text-white">重要工作日程行事曆</h2>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 font-semibold ml-auto">11-1月重點</span>
+        </div>
+
+        <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs">
+          <div class="relative border-l-2 border-cyan-200 dark:border-cyan-800 ml-4 space-y-6 py-2">
+            
+            <!-- 11/04 -->
+            <div class="relative pl-6">
+              <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 ring-4 ring-white dark:ring-slate-800"></span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300">11/04 (三) 07:50</span>
+                <span class="text-sm font-bold text-slate-800 dark:text-white">第2次導師會報 ＆ 校園樹木修剪施工 ＆ 班級事務費發放</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">會議於教師午餐教室；總務處廠商進場修剪校門及漳和國小旁樟樹等樹群。</p>
+            </div>
+
+            <!-- 11/05 -->
+            <div class="relative pl-6">
+              <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 ring-4 ring-white dark:ring-slate-800"></span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">11/05 (四)</span>
+                <span class="text-sm font-bold text-slate-800 dark:text-white">校內科學展覽會報名截止</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">一、二年級每班至少一件參賽，設備組收件。</p>
+            </div>
+
+            <!-- 11/06 -->
+            <div class="relative pl-6">
+              <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-white dark:ring-slate-800"></span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">11/06 (五)</span>
+                <span class="text-sm font-bold text-slate-800 dark:text-white">教室佈置評分 ＆ 國語文校內賽</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">教室佈置評分表最遲 12:00 送回訓育組；國語文校內賽延期至本日辦理。</p>
+            </div>
+
+            <!-- 11/08 - 11/11 -->
+            <div class="relative pl-6">
+              <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-white dark:ring-slate-800"></span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">11/08 (日) - 11/11 (三)</span>
+                <span class="text-sm font-bold text-slate-800 dark:text-white">115年南投縣全縣運動會</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">體育組帶隊選手代表南投國中參賽爭取榮譽。</p>
+            </div>
+
+            <!-- 11/11 - 11/17 音樂賽 -->
+            <div class="relative pl-6">
+              <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-purple-500 ring-4 ring-white dark:ring-slate-800"></span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">11/11、11/12、11/17</span>
+                <span class="text-sm font-bold text-slate-800 dark:text-white">學生音樂比賽縣初賽（文化局演藝廳）</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">11/11揚琴個人、11/12絲竹室內樂、11/17口琴四重奏。</p>
+            </div>
+
+            <!-- 11/12 一年級體檢 -->
+            <div class="relative pl-6">
+              <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-rose-500 ring-4 ring-white dark:ring-slate-800"></span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 font-bold">11/12 (四) 11:30起</span>
+                <span class="text-sm font-bold text-slate-800 dark:text-white">一年級新生健康檢查（活動中心 / 南基醫院）</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">穿體育服、早午餐後落實潔牙，從七年一班依序施檢。</p>
+            </div>
+
+            <!-- 11/27 -->
+            <div class="relative pl-6">
+              <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-green-500 ring-4 ring-white dark:ring-slate-800"></span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300">11/27 (五) 早自習</span>
+                <span class="text-sm font-bold text-slate-800 dark:text-white">生活智慧王 舊物再用影音宣導</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">一年級各班於 12/7(一) 前繳交分組學習單。</p>
+            </div>
+
+            <!-- 12/02 - 12/04 第二次定期評量 -->
+            <div class="relative pl-6">
+              <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white dark:ring-slate-800"></span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">12/02 (三) - 12/04 (四)</span>
+                <span class="text-sm font-bold text-slate-800 dark:text-white">全校第二次定期評量</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">請導師提醒學生確實劃卡（含十位數0）；讀卡務必清點張數並標註缺考。</p>
+            </div>
+
+            <!-- 12/23 - 12/24 國三模擬考 -->
+            <div class="relative pl-6">
+              <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-purple-600 ring-4 ring-white dark:ring-slate-800"></span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">12/23 (三) - 12/24 (四)</span>
+                <span class="text-sm font-bold text-slate-800 dark:text-white">國三年級第二次複習考（1-4冊）</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">自費題本請妥善保管缺考學生題本及答案卡。</p>
+            </div>
+
+            <!-- 1/21 - 1/27 寒假輔導 -->
+            <div class="relative pl-6">
+              <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-500 ring-4 ring-white dark:ring-slate-800"></span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300">116年 1/21(四) - 1/27(三)</span>
+                <span class="text-sm font-bold text-slate-800 dark:text-white">115學年度寒假輔導課程（共5日半天）</span>
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">1/18-19三次段考、1/20休業式、1/21-27寒輔每日4節課。</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 模組八：導師專用待辦檢核清單 (Checklist) ==================== -->
+      <section id="section-checklist" class="content-section space-y-4" data-office="checklist">
+        <div class="flex items-center gap-2 border-b-2 border-orange-500 pb-2">
+          <span class="p-2 rounded-xl bg-orange-600 text-white text-base"><i class="fa-solid fa-list-check"></i></span>
+          <h2 class="text-xl font-bold text-slate-800 dark:text-white">導師待辦與配合重點檢核表</h2>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300 font-semibold ml-auto">點擊勾選記錄</span>
+        </div>
+
+        <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs space-y-3">
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-2">
+            提供導師在班級經營日常中快速自主檢核（勾選狀態將暫存在您的瀏覽器中）：
+          </p>
+
+          <div class="space-y-2.5">
+            <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-750 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="saveChecklist()">
+              <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+                <strong>【班級事務費領取】</strong>向總務處/家長會領取每班 1,000 元事務費（11/4前），妥善運用於班級布置。
+              </span>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-750 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="saveChecklist()">
+              <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+                <strong>【教室佈置競賽評分】</strong>11/6(五) 早上前四節評分完畢，評分表於 12:00 前交回訓育組。
+              </span>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-750 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="saveChecklist()">
+              <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+                <strong>【一年級新生體檢宣導】</strong>提醒 11/12(四) 當天穿體育服、早午餐後刷牙，班長提醒任課教師隨班到活動中心維持秩序。
+              </span>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-750 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="saveChecklist()">
+              <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+                <strong>【平板股長推選】</strong>各班推選 2 位平板股長，負責 iPad 與充電車借還、充電及上鎖檢查。
+              </span>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-750 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="saveChecklist()">
+              <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+                <strong>【放學節能關機巡檢】</strong>叮嚀事務股長放學前確認大屏、門窗、電扇、壁扇及花台照明全數關閉上鎖。
+              </span>
+            </label>
+
+            <label class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-750 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+              <input type="checkbox" class="mt-1 w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500" onchange="saveChecklist()">
+              <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-200">
+                <strong>【學生請假與外出確認】</strong>學生臨時外出簽名前電話聯繫家長；請假假卡3日內繳交學務處生教組。
+              </span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 頁尾 (Footer) -->
+    <footer class="mt-12 py-8 bg-slate-100 dark:bg-slate-800/80 border-t border-slate-200 dark:border-slate-700 text-center text-xs text-slate-500 dark:text-slate-400 no-print">
+      <div class="max-w-7xl mx-auto px-4 space-y-2">
+        <p class="font-bold text-slate-700 dark:text-slate-300">南投縣立南投國民中學 115學年度第一學期 11月份導師會報</p>
+        <p>會議記錄與各處室資料整合 · 數位化會議系統 ｜ 會議日期：115年11月4日</p>
+        <p class="text-[11px] text-slate-400">系統通行密碼：049 ｜ 設計支援：南投國中資訊科技團隊</p>
+      </div>
+    </footer>
+
+    <!-- 圖片燈箱預覽 Modal (Lightbox) -->
+    <div id="image-lightbox" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden items-center justify-center p-4" onclick="closeLightbox()">
+      <div class="max-w-4xl max-h-[90vh] bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col" onclick="event.stopPropagation()">
+        <div class="flex items-center justify-between px-4 py-3 border-b border-slate-200 dark:border-slate-700">
+          <h4 id="lightbox-caption" class="text-sm font-bold text-slate-800 dark:text-white truncate">圖片預覽</h4>
+          <button onclick="closeLightbox()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-lg">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="p-2 overflow-auto flex items-center justify-center bg-slate-900/10">
+          <img id="lightbox-img" src="" alt="放大預覽" class="max-h-[75vh] w-auto object-contain rounded-lg shadow-inner">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==================== 互動腳本 Script ==================== -->
+  <script>
+    const CORRECT_PASSWORD = "049";
+
+    // 初始化檢查登入狀態
+    document.addEventListener("DOMContentLoaded", function() {
+      const isAuth = sessionStorage.getItem("ntjh_meeting_auth_11511") === "true";
+      if (isAuth) {
+        unlockApp(false);
+      } else {
+        document.getElementById("password-input").focus();
+      }
+
+      // 載入勾選清單
+      loadChecklist();
+
+      // 深淺色初始化
+      if (localStorage.getItem("theme") === "dark" || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.getElementById('theme-icon').className = 'fa-solid fa-sun';
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.getElementById('theme-icon').className = 'fa-solid fa-moon';
+      }
+    });
+
+    // 驗證密碼
+    function verifyPassword() {
+      const input = document.getElementById("password-input").value.trim();
+      const errorDiv = document.getElementById("auth-error");
+      const card = document.getElementById("auth-card");
+
+      if (input === CORRECT_PASSWORD) {
+        errorDiv.classList.add("hidden");
+        sessionStorage.setItem("ntjh_meeting_auth_11511", "true");
+        unlockApp(true);
+      } else {
+        errorDiv.classList.remove("hidden");
+        card.classList.remove("shake-animation");
+        void card.offsetWidth; // 強制重繪
+        card.classList.add("shake-animation");
+        document.getElementById("password-input").value = "";
+        document.getElementById("password-input").focus();
+      }
+    }
+
+    // 快速填入示範密碼
+    function fillDemoPassword() {
+      document.getElementById("password-input").value = "049";
+      verifyPassword();
+    }
+
+    // 解鎖主畫面
+    function unlockApp(animate) {
+      const authScreen = document.getElementById("auth-screen");
+      const appContainer = document.getElementById("app-container");
+
+      if (animate) {
+        authScreen.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+        authScreen.style.opacity = "0";
+        authScreen.style.transform = "scale(0.98)";
+        setTimeout(() => {
+          authScreen.classList.add("hidden");
+          appContainer.style.opacity = "1";
+        }, 400);
+      } else {
+        authScreen.classList.add("hidden");
+        appContainer.style.opacity = "1";
+      }
+    }
+
+    // 安全鎖定
+    function lockApp() {
+      sessionStorage.removeItem("ntjh_meeting_auth_11511");
+      const authScreen = document.getElementById("auth-screen");
+      const appContainer = document.getElementById("app-container");
+      
+      authScreen.style.opacity = "1";
+      authScreen.style.transform = "scale(1)";
+      authScreen.classList.remove("hidden");
+      appContainer.style.opacity = "0";
+      document.getElementById("password-input").value = "";
+      document.getElementById("auth-error").classList.add("hidden");
+      setTimeout(() => document.getElementById("password-input").focus(), 100);
+    }
+
+    // 密碼可見切換
+    function togglePasswordVisibility() {
+      const pwdInput = document.getElementById("password-input");
+      const pwdIcon = document.getElementById("pwd-icon");
+      if (pwdInput.type === "password") {
+        pwdInput.type = "text";
+        pwdIcon.className = "fa-solid fa-eye-slash";
+      } else {
+        pwdInput.type = "password";
+        pwdIcon.className = "fa-solid fa-eye";
+      }
+    }
+
+    // 處室標籤頁籤切換
+    function setTab(tabKey) {
+      const buttons = document.querySelectorAll(".tab-btn");
+      buttons.forEach(btn => {
+        if (btn.getAttribute("data-tab") === tabKey) {
+          btn.className = "tab-btn px-3.5 py-1.5 rounded-xl transition-all whitespace-nowrap flex items-center gap-2 bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm";
+        } else {
+          btn.className = "tab-btn px-3.5 py-1.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 transition-all whitespace-nowrap flex items-center gap-1.5";
+        }
+      });
+
+      const sections = document.querySelectorAll(".content-section");
+      sections.forEach(sec => {
+        const secOffice = sec.getAttribute("data-office");
+        if (tabKey === "all") {
+          sec.classList.remove("hidden");
+        } else {
+          if (secOffice === tabKey) {
+            sec.classList.remove("hidden");
+          } else {
+            sec.classList.add("hidden");
+          }
+        }
+      });
+
+      // 重置快捷組別按鈕
+      resetSubtagButtons();
+    }
+
+    // 次級標籤過濾
+    function filterBySubtag(tag) {
+      const cards = document.querySelectorAll(".content-card");
+      const subtagBtns = document.querySelectorAll(".subtag-btn");
+      
+      subtagBtns.forEach(btn => {
+        if ((tag === 'all' && btn.textContent.includes('全部')) || btn.textContent.includes(tag)) {
+          btn.className = "subtag-btn px-2.5 py-1 text-xs rounded-lg bg-emerald-600 text-white font-medium";
+        } else {
+          btn.className = "subtag-btn px-2.5 py-1 text-xs rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 font-medium";
+        }
+      });
+
+      cards.forEach(card => {
+        const cardTag = card.getAttribute("data-subtag") || "";
+        if (tag === 'all' || cardTag.includes(tag)) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    function resetSubtagButtons() {
+      const subtagBtns = document.querySelectorAll(".subtag-btn");
+      subtagBtns.forEach((btn, idx) => {
+        if (idx === 0) {
+          btn.className = "subtag-btn px-2.5 py-1 text-xs rounded-lg bg-emerald-600 text-white font-medium";
+        } else {
+          btn.className = "subtag-btn px-2.5 py-1 text-xs rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 font-medium";
+        }
+      });
+      const cards = document.querySelectorAll(".content-card");
+      cards.forEach(card => card.style.display = "");
+    }
+
+    // 即時關鍵字搜尋
+    function handleSearch(keyword) {
+      const q = keyword.trim().toLowerCase();
+      const clearBtn = document.getElementById("search-clear-btn");
+      if (clearBtn) clearBtn.classList.toggle("hidden", !q);
+
+      const cards = document.querySelectorAll(".content-card");
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (!q || text.includes(q)) {
+          card.style.display = "";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      // 檢查處室區塊是否有可見卡片
+      const sections = document.querySelectorAll(".content-section");
+      sections.forEach(sec => {
+        const visibleCards = sec.querySelectorAll(".content-card:not([style*='display: none'])");
+        sec.style.display = (visibleCards.length > 0 || !q) ? "" : "none";
+      });
+
+      const noResults = document.getElementById("no-search-results");
+      if (noResults) {
+        noResults.classList.toggle("hidden", visibleCount > 0 || !q);
+      }
+    }
+
+    function clearSearch() {
+      const input = document.getElementById("search-input");
+      if (input) {
+        input.value = "";
+        handleSearch("");
+        input.focus();
+      }
+    }
+
+    function toggleMobileSearch() {
+      const bar = document.getElementById("mobile-search-bar");
+      bar.classList.toggle("hidden");
+    }
+
+    // 字體大小縮放
+    function setFontSize(size) {
+      const body = document.body;
+      body.classList.remove("text-sm", "text-base", "text-lg");
+      
+      const btnSm = document.getElementById("btn-font-sm");
+      const btnBase = document.getElementById("btn-font-base");
+      const btnLg = document.getElementById("btn-font-lg");
+
+      [btnSm, btnBase, btnLg].forEach(b => {
+        b.className = "px-2 py-1 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700";
+      });
+
+      if (size === 'sm') {
+        body.classList.add("text-sm");
+        btnSm.className = "px-2 py-1 rounded-lg bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 font-bold shadow-xs";
+      } else if (size === 'lg') {
+        body.classList.add("text-lg");
+        btnLg.className = "px-2 py-1 rounded-lg bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 font-bold shadow-xs";
+      } else {
+        body.classList.add("text-base");
+        btnBase.className = "px-2 py-1 rounded-lg bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 font-bold shadow-xs";
+      }
+    }
+
+    // 深色模式切換
+    function toggleDarkMode() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      document.getElementById('theme-icon').className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    }
+
+    // 圖片燈箱
+    function openLightbox(src, caption) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox-caption").textContent = caption || "圖片放大預覽";
+      document.getElementById("image-lightbox").classList.remove("hidden");
+      document.getElementById("image-lightbox").classList.add("flex");
+    }
+
+    function closeLightbox() {
+      document.getElementById("image-lightbox").classList.add("hidden");
+      document.getElementById("image-lightbox").classList.remove("flex");
+    }
+
+    // 導師待辦清單儲存與載入
+    function saveChecklist() {
+      const checkboxes = document.querySelectorAll("#section-checklist input[type='checkbox']");
+      const states = Array.from(checkboxes).map(c => c.checked);
+      localStorage.setItem("ntjh_checklist_states", JSON.stringify(states));
+    }
+
+    function loadChecklist() {
+      const saved = localStorage.getItem("ntjh_checklist_states");
+      if (saved) {
+        try {
+          const states = JSON.parse(saved);
+          const checkboxes = document.querySelectorAll("#section-checklist input[type='checkbox']");
+          checkboxes.forEach((c, idx) => {
+            if (states[idx] !== undefined) c.checked = states[idx];
+          });
+        } catch(e) {}
+      }
+    }
+  </script>
+</body>
+</html>
