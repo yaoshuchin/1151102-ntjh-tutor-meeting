@@ -208,33 +208,84 @@
       border-color: #cee3d0 !important;
     }
 
-    /* 導師待辦檢核表 - 反白亮度調低與柔和視覺設定 */
+    /* ==================== 導師待辦檢核表 - 完美高對比、不刺眼、清晰易讀 ==================== */
     #section-checklist label.checklist-item {
-      background-color: #f1f5f9; /* 降低底色亮光感，採用柔和低眩光 slate 灰色 */
-      border: 1px solid #e2e8f0;
-      color: #334155;
+      background-color: #f1f5f9 !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #0f172a !important;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    #section-checklist label.checklist-item:hover {
-      background-color: #e2e8f0 !important; /* 顯著調低懸停反白亮度，避免死白或刺眼對比 */
-      border-color: #cbd5e1 !important;
+    #section-checklist label.checklist-item strong {
+      color: #0284c7 !important;
     }
+    #section-checklist label.checklist-item span {
+      color: #1e293b !important;
+    }
+    #section-checklist label.checklist-item:hover {
+      background-color: #e2e8f0 !important;
+      border-color: #94a3b8 !important;
+    }
+
+    /* 深色模式：深沉背景 + 高清晰亮白字體，徹底解決白底刺眼與淡字看不清問題 */
     .dark #section-checklist label.checklist-item {
-      background-color: #1e293b;
-      border: 1px solid #334155;
-      color: #cbd5e1;
+      background-color: #243347 !important; /* 柔和深藍灰底色，絕無死白刺眼 */
+      border: 1px solid #3b4e68 !important;
+      color: #f8fafc !important;
+    }
+    .dark #section-checklist label.checklist-item strong {
+      color: #38bdf8 !important; /* 鮮明清晰的天藍色標題 */
+    }
+    .dark #section-checklist label.checklist-item span {
+      color: #f1f5f9 !important; /* 高對比明亮白字，清晰立現 */
     }
     .dark #section-checklist label.checklist-item:hover {
-      background-color: #273549 !important; /* 深色模式下反白懸停同樣柔和微調 */
-      border-color: #475569 !important;
+      background-color: #2e415a !important; /* 懸停柔和微調，絕不反白 */
+      border-color: #4f688a !important;
     }
+
+    /* 護眼淡綠模式：柔和薄荷綠背景 + 深墨綠高對比字體 */
+    html.theme-green #section-checklist label.checklist-item {
+      background-color: #e1efe3 !important;
+      border: 1px solid #b8dabf !important;
+      color: #0f2e15 !important;
+    }
+    html.theme-green #section-checklist label.checklist-item strong {
+      color: #15803d !important;
+    }
+    html.theme-green #section-checklist label.checklist-item span {
+      color: #14371b !important;
+    }
+    html.theme-green #section-checklist label.checklist-item:hover {
+      background-color: #d0e7d3 !important;
+      border-color: #9eccaa !important;
+    }
+
+    /* 勾選完成狀態 */
     #section-checklist label.checklist-item.is-checked {
-      background-color: #e2e8f0/80;
-      opacity: 0.65;
+      background-color: #e2e8f0 !important;
+      opacity: 0.6 !important;
     }
     .dark #section-checklist label.checklist-item.is-checked {
-      background-color: #151e2e;
-      opacity: 0.55;
+      background-color: #141c27 !important;
+      border-color: #1e293b !important;
+      opacity: 0.55 !important;
+    }
+    html.theme-green #section-checklist label.checklist-item.is-checked {
+      background-color: #d6ead8 !important;
+      opacity: 0.6 !important;
+    }
+    #section-checklist label.checklist-item.is-checked strong,
+    #section-checklist label.checklist-item.is-checked span {
+      color: #64748b !important;
+      text-decoration: line-through !important;
+    }
+    .dark #section-checklist label.checklist-item.is-checked strong,
+    .dark #section-checklist label.checklist-item.is-checked span {
+      color: #64748b !important;
+    }
+    html.theme-green #section-checklist label.checklist-item.is-checked strong,
+    html.theme-green #section-checklist label.checklist-item.is-checked span {
+      color: #5c7e63 !important;
     }
     /* 選取反白 (Selection) 亮度調低 */
     #section-checklist ::selection {
@@ -616,7 +667,7 @@
             <div class="md:col-span-2 space-y-3">
               <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">會議議程規劃</h3>
               <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
-                <div class="p-3.5 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                <div class="p-3.5 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
                   <div>
                     <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400">第一階段</span>
                     <h4 class="font-bold text-slate-800 dark:text-white mt-1">一、主席報告</h4>
@@ -624,7 +675,7 @@
                   <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">學務處主持致詞與說明會務方向</p>
                 </div>
 
-                <div class="p-3.5 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                <div class="p-3.5 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
                   <div>
                     <span class="text-xs font-bold text-blue-600 dark:text-blue-400">第二階段</span>
                     <h4 class="font-bold text-slate-800 dark:text-white mt-1">二、各處室報告</h4>
@@ -632,7 +683,7 @@
                   <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">1. 教務處<br>2. 學務處<br>3. 總務處<br>4. 輔導室 / 家長會</p>
                 </div>
 
-                <div class="p-3.5 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                <div class="p-3.5 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
                   <div>
                     <span class="text-xs font-bold text-purple-600 dark:text-purple-400">第三階段</span>
                     <h4 class="font-bold text-slate-800 dark:text-white mt-1">三、導師時間</h4>
@@ -640,7 +691,7 @@
                   <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">各年級導師意見交流、班級經營問題反應與提案討論</p>
                 </div>
 
-                <div class="p-3.5 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                <div class="p-3.5 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
                   <div>
                     <span class="text-xs font-bold text-amber-600 dark:text-amber-400">第四階段</span>
                     <h4 class="font-bold text-slate-800 dark:text-white mt-1">四、校長致詞</h4>
@@ -776,7 +827,7 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
                 
                 <!-- 步驟 1 -->
-                <div class="group bg-slate-50 dark:bg-slate-750 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-400 transition-colors">
+                <div class="group bg-slate-50 dark:bg-slate-700/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-400 transition-colors">
                   <div>
                     <div class="flex items-center justify-between mb-2">
                       <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-600 text-white">步驟 1</span>
@@ -790,7 +841,7 @@
                 </div>
 
                 <!-- 步驟 2 -->
-                <div class="group bg-slate-50 dark:bg-slate-750 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-400 transition-colors">
+                <div class="group bg-slate-50 dark:bg-slate-700/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-400 transition-colors">
                   <div>
                     <div class="flex items-center justify-between mb-2">
                       <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-600 text-white">步驟 2</span>
@@ -804,7 +855,7 @@
                 </div>
 
                 <!-- 步驟 3 -->
-                <div class="group bg-slate-50 dark:bg-slate-750 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-400 transition-colors">
+                <div class="group bg-slate-50 dark:bg-slate-700/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-400 transition-colors">
                   <div>
                     <div class="flex items-center justify-between mb-2">
                       <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-600 text-white">步驟 3</span>
@@ -818,7 +869,7 @@
                 </div>
 
                 <!-- 步驟 4 -->
-                <div class="group bg-slate-50 dark:bg-slate-750 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-400 transition-colors">
+                <div class="group bg-slate-50 dark:bg-slate-700/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-400 transition-colors">
                   <div>
                     <div class="flex items-center justify-between mb-2">
                       <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-600 text-white">步驟 4</span>
@@ -849,7 +900,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
               
               <!-- 1. 畢業大頭照 -->
-              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+              <div class="p-3 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700">
                 <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
                   <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">1</span>
                   三年級大頭照拍攝通知
@@ -860,7 +911,7 @@
               </div>
 
               <!-- 2. 註冊費催繳 -->
-              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+              <div class="p-3 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700">
                 <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
                   <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">2</span>
                   尚未完成註冊繳費關懷
@@ -871,7 +922,7 @@
               </div>
 
               <!-- 3. 段考與模擬考讀卡 -->
-              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+              <div class="p-3 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700">
                 <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
                   <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">3</span>
                   讀卡考科與劃卡規範
@@ -882,7 +933,7 @@
               </div>
 
               <!-- 4. 模擬考題本與答案卡 -->
-              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+              <div class="p-3 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700">
                 <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
                   <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">4</span>
                   三年級模擬考試題本保管
@@ -904,7 +955,7 @@
               </div>
 
               <!-- 6. 轉學生編班機制 -->
-              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+              <div class="p-3 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700">
                 <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
                   <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">6</span>
                   轉學生縣府常態編班說明
@@ -915,7 +966,7 @@
               </div>
 
               <!-- 7. 寒輔時間表 -->
-              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+              <div class="p-3 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700">
                 <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
                   <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">7</span>
                   寒輔意願調查預告
@@ -926,7 +977,7 @@
               </div>
 
               <!-- 8. 會考陪考與 9. 五專免試 -->
-              <div class="p-3 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700">
+              <div class="p-3 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700">
                 <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
                   <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs">8-9</span>
                   會考陪同考場 & 五專服務學習積分
@@ -1161,7 +1212,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
-              <div class="p-3.5 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2">
+              <div class="p-3.5 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2">
                 <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
                   <i class="fa-solid fa-syringe text-emerald-500"></i> 流感疫苗施打與衛生防護
                 </div>
@@ -1200,7 +1251,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
               <div class="space-y-2 text-slate-600 dark:text-slate-300">
                 <p><strong>1. 安得烈食物箱：</strong>七年級 2 件申請已寄出，審核約 30-45 天，通過後書面通知。</p>
-                <div class="p-2.5 bg-slate-50 dark:bg-slate-750 rounded-xl border border-slate-200 dark:border-slate-700 text-xs leading-relaxed">
+                <div class="p-2.5 bg-slate-50 dark:bg-slate-700/60 rounded-xl border border-slate-200 dark:border-slate-700 text-xs leading-relaxed">
                   <strong class="text-slate-900 dark:text-white">2. 10/15 午推會重大決議：</strong>
                   <ul class="list-disc pl-4 mt-1 space-y-1">
                     <li>午餐結餘款<strong>須依規定全數繳回縣府</strong>，無法作為校慶或包糕粽加菜經費。</li>
@@ -1405,7 +1456,7 @@
             <div class="overflow-x-auto">
               <table class="w-full text-xs sm:text-sm text-left border-collapse">
                 <thead>
-                  <tr class="bg-slate-100 dark:bg-slate-750 text-slate-600 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
+                  <tr class="bg-slate-100 dark:bg-slate-700/60 text-slate-600 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
                     <th class="py-2.5 px-3 font-bold text-center w-12">編號</th>
                     <th class="py-2.5 px-3 font-bold text-center w-24">職稱</th>
                     <th class="py-2.5 px-3 font-bold">委員姓名</th>
