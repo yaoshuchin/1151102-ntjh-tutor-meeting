@@ -553,6 +553,12 @@
             <i class="fa-solid fa-list-check text-orange-500"></i>
             <span>導師待辦</span>
           </button>
+
+          <button onclick="setTab('downloads')" data-tab="downloads" class="tab-btn px-3.5 py-1.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/60 transition-all whitespace-nowrap flex items-center gap-1.5 font-bold">
+            <i class="fa-solid fa-file-arrow-down text-blue-500"></i>
+            <span>文件下載</span>
+            <span class="tab-count bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 px-1.5 py-0.2 text-[11px] rounded-full">4檔</span>
+          </button>
         </div>
       </div>
     </div>
@@ -627,6 +633,122 @@
         <h3 class="text-lg font-bold text-slate-600 dark:text-slate-400">找不到符合搜尋條件的內容</h3>
         <p class="text-xs text-slate-400 mt-1">請嘗試其他關鍵字，或點擊上方「清除搜尋」</p>
       </div>
+
+      <!-- ==================== 模組零：會議相關文件下載專區 (Downloads) ==================== -->
+      <section id="section-downloads" class="content-section space-y-4" data-office="downloads">
+        <div class="flex items-center gap-2 border-b-2 border-blue-600 pb-2">
+          <span class="p-2 rounded-xl bg-blue-600 text-white text-base"><i class="fa-solid fa-file-arrow-down"></i></span>
+          <h2 class="text-xl font-bold text-slate-800 dark:text-white">會議文件與處室原檔下載專區</h2>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-semibold ml-auto">提供 Word (.docx) 檔直接下載</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- 1. 南投國中115學年度11月份導師會報(總).docx -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border-2 border-blue-400 dark:border-blue-600 shadow-md flex flex-col justify-between space-y-4 relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-gradient-to-l from-blue-600 to-indigo-600 text-white text-[11px] font-bold px-3 py-1 rounded-bl-xl shadow-xs">
+              ★ 正式大會手冊總檔
+            </div>
+            <div>
+              <div class="flex items-center gap-2.5 mb-2">
+                <div class="w-11 h-11 rounded-xl bg-blue-100 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl shrink-0">
+                  <i class="fa-solid fa-file-word"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-slate-900 dark:text-white text-base leading-tight">南投國中115學年度11月份導師會報(總).docx</h3>
+                  <p class="text-xs text-blue-600 dark:text-blue-400 font-medium mt-0.5">整合版正式會報手冊（45 KB）</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-1">
+                完整整合<strong>教務處（6大業務）</strong>、<strong>學務處（6大組別）</strong>、<strong>總務處</strong>、<strong>輔導室</strong>與<strong>家長會報告及14位委員名冊</strong>之標準格式大會總手冊。
+              </p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+              <span class="text-[11px] text-slate-400"><i class="fa-solid fa-check-double text-emerald-500 mr-1"></i>已整合完畢</span>
+              <a href="南投國中115學年度11月份導師會報(總).docx" download="南投國中115學年度11月份導師會報(總).docx" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl shadow-sm hover:shadow transition-all flex items-center gap-2 active:scale-95">
+                <i class="fa-solid fa-download"></i>
+                <span>立即下載 (.docx)</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 2. 學務處二次導師會報報告事項.docx -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center gap-2.5 mb-2">
+                <div class="w-11 h-11 rounded-xl bg-emerald-100 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                  <i class="fa-solid fa-file-word"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-slate-900 dark:text-white text-base leading-tight">學務處二次導師會報報告事項.docx</h3>
+                  <p class="text-xs text-emerald-600 dark:text-emerald-400 font-medium mt-0.5">學務處原始提報檔（41 KB）</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-1">
+                包含會議基本程序日程、訓育組、生教組（監視器與自省書規定）、體育組（全縣運）、衛生組、健康中心（11/12體檢）及午餐秘書提報事項。
+              </p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+              <span class="text-[11px] text-slate-400">學務處主辦單位原檔</span>
+              <a href="學務處二次導師會報報告事項.docx" download="學務處二次導師會報報告事項.docx" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-sm hover:shadow transition-all flex items-center gap-2 active:scale-95">
+                <i class="fa-solid fa-download"></i>
+                <span>立即下載 (.docx)</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3. 南投國中115學年度11月份導師會報(總)_原檔備份.docx -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center gap-2.5 mb-2">
+                <div class="w-11 h-11 rounded-xl bg-amber-100 dark:bg-amber-950/70 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl shrink-0">
+                  <i class="fa-solid fa-file-shield"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-slate-900 dark:text-white text-base leading-tight">南投國中115學年度11月份導師會報(總)_原檔備份.docx</h3>
+                  <p class="text-xs text-amber-600 dark:text-amber-400 font-medium mt-0.5">總務處與家長會原檔備份（28 KB）</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-1">
+                彙整前之原始備份存檔，包含總務處各項校舍修繕工程進度、11/4施工公告、節電配合事項及家長會長會務報告與家長委員名冊表。
+              </p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+              <span class="text-[11px] text-slate-400">總務處與家長會原檔</span>
+              <a href="南投國中115學年度11月份導師會報(總)_原檔備份.docx" download="南投國中115學年度11月份導師會報(總)_原檔備份.docx" class="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded-xl shadow-sm hover:shadow transition-all flex items-center gap-2 active:scale-95">
+                <i class="fa-solid fa-download"></i>
+                <span>立即下載 (.docx)</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 4. 115-11月份導報(教).docx -->
+          <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center gap-2.5 mb-2">
+                <div class="w-11 h-11 rounded-xl bg-purple-100 dark:bg-purple-950/70 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl shrink-0">
+                  <i class="fa-solid fa-file-word"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-slate-900 dark:text-white text-base leading-tight">115-11月份導報(教).docx</h3>
+                  <p class="text-xs text-purple-600 dark:text-purple-400 font-medium mt-0.5">教務處原始提報檔（1.2 MB）</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-1">
+                包含教務處主任宣導、教學組、課發組（內建教育部因材網操作高清圖）、註冊組（9項學籍考務）、設備組及資訊組業務報告原檔。
+              </p>
+            </div>
+            <div class="pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+              <span class="text-[11px] text-slate-400">教務處完整含圖原檔</span>
+              <a href="115-11月份導報(教).docx" download="115-11月份導報(教).docx" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold rounded-xl shadow-sm hover:shadow transition-all flex items-center gap-2 active:scale-95">
+                <i class="fa-solid fa-download"></i>
+                <span>立即下載 (.docx)</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
 
       <!-- ==================== 模組一：會議程序與開會資訊 ==================== -->
       <section id="section-agenda" class="content-section space-y-4" data-office="agenda">
