@@ -824,9 +824,25 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- ==================== 模組二：教務處報告事項 ==================== -->
+              <!-- 會議手冊行動二維碼 QR Code 卡片 -->
+        <div class="content-card bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col md:flex-row items-center gap-6">
+          <div class="p-3 bg-white rounded-2xl border-2 border-emerald-500 shadow-md shrink-0 cursor-pointer group" onclick="openLightbox('images/qrcode.png', '南投國中 115學年度11月份導師會報 電子手冊 QR Code')">
+            <img src="images/qrcode.png" alt="導師會報 QR Code" class="w-36 h-36 object-contain group-hover:scale-105 transition-transform" />
+            <div class="text-[10px] text-center text-slate-500 font-semibold mt-1">點擊放大檢視</div>
+          </div>
+          <div class="space-y-2 text-center md:text-left">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">
+              <i class="fa-solid fa-qrcode"></i>
+              <span>行動存取二維碼</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">南投國中 115-11 導師會報電子手冊 行動 QR Code</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+              歡迎全校導師與行政同仁使用手機或平板相機直接掃描上方 QR Code，即可在個人行動載具上隨時同步開啟本會報手冊、即時搜尋各處室重點與下載 Word 原檔。<br>
+              <span class="text-emerald-600 dark:text-emerald-400 font-bold">💡 系統通行密碼：049</span> ｜ 網址：<a href="https://yaoshuchin.github.io/1151102-ntjh-tutor-meeting/" target="_blank" class="underline text-blue-500 hover:text-blue-600 font-medium">https://yaoshuchin.github.io/1151102-ntjh-tutor-meeting/</a>
+            </p>
+          </div>
+        </div>
+      </section>  <!-- ==================== 模組二：教務處報告事項 ==================== -->
       <section id="section-edu" class="content-section space-y-4" data-office="edu">
         <div class="flex items-center gap-2 border-b-2 border-blue-500 pb-2">
           <span class="p-2 rounded-xl bg-blue-600 text-white text-base"><i class="fa-solid fa-book-open"></i></span>
@@ -1237,8 +1253,34 @@
               <li>
                 <strong>4. 一二年級社團正式課程要求：</strong>請勿讓學生遲到社團；若需個別晤談留人，務必以紙條告知社團老師掌握出缺席。
               </li>
-              <li class="p-2.5 bg-emerald-50 dark:bg-emerald-950/40 rounded-xl border border-emerald-200 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200">
-                <strong>5. 畢旅與隔宿致謝：</strong>三年級畢業旅行（10/21-23）、二年級隔宿露營（10/27-28）皆圓滿完成，學務處由衷感謝全體隨隊導師無私奉獻！
+              <li class="p-3 bg-emerald-50 dark:bg-emerald-950/40 rounded-xl border border-emerald-200 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200 space-y-2.5">
+                <div>
+                  <strong>5. 畢旅與隔宿致謝：</strong>三年級畢業旅行（10/21-23）、二年級隔宿露營（10/27-28）皆順利圓滿完成，學務處由衷感謝全體隨隊導師無私奉獻！
+                </div>
+                <!-- 115畢旅 & 115隔宿 官方專案成果網站連結 -->
+                <div class="pt-2 border-t border-emerald-200/60 dark:border-emerald-800/60 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <a href="https://yaoshuchin.github.io/115-nantou-trip-portal/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-emerald-300 dark:border-emerald-700 hover:border-blue-500 hover:shadow-xs transition-all group">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                      <span class="w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-900/60 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-bus"></i></span>
+                      <div class="min-w-0">
+                        <div class="text-xs font-bold text-slate-800 dark:text-white group-hover:text-blue-600 truncate">115畢旅專案成果網站</div>
+                        <div class="text-[10px] text-slate-400 truncate">三年級畢業旅行手冊</div>
+                      </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-blue-500 shrink-0 ml-1"></i>
+                  </a>
+
+                  <a href="https://yaoshuchin.github.io/115-nantou-camping-guide/handbook.html" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-emerald-300 dark:border-emerald-700 hover:border-emerald-500 hover:shadow-xs transition-all group">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                      <span class="w-7 h-7 rounded-lg bg-emerald-100 dark:bg-emerald-900/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-campground"></i></span>
+                      <div class="min-w-0">
+                        <div class="text-xs font-bold text-slate-800 dark:text-white group-hover:text-emerald-600 truncate">115隔宿營隊戰略指南</div>
+                        <div class="text-[10px] text-slate-400 truncate">二年級隔宿露營手冊</div>
+                      </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-emerald-500 shrink-0 ml-1"></i>
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
@@ -1413,9 +1455,89 @@
           </div>
 
         </div>
-      </section>
+              <!-- 學務處 重點宣導：防範校園與學生網路詐騙宣導專區 -->
+        <div class="content-card md:col-span-2 bg-white dark:bg-slate-800 rounded-2xl p-6 border-2 border-rose-400 dark:border-rose-600 shadow-sm space-y-4" data-subtag="重要法規">
+          <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-3">
+            <div class="flex items-center gap-2.5">
+              <span class="p-2 rounded-xl bg-rose-600 text-white text-base"><i class="fa-solid fa-shield-virus"></i></span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">學務處 重點宣導：防範網路詐騙專區</h3>
+                <p class="text-xs text-rose-600 dark:text-rose-400 font-medium">守護校園資安 · 辨識新興騙局 · 宣導「一聽二掛三查證」</p>
+              </div>
+            </div>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 font-bold hidden sm:inline-block">法治宣導影音與圖卡</span>
+          </div>
 
-      <!-- ==================== 模組四：總務處報告事項 ==================== -->
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            為提升全體師生與家長防詐意識，防範學生落入假網購、遊戲點數代購、求職人頭戶及社群假交友等新興網路詐騙陷阱，學務處特提供防詐影音宣導與圖卡，請導師於班級經營、班會及家長聯繫時廣為宣導，共同維護學生財產與身心安全。
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 pt-2">
+            <!-- 宣導短片 -->
+            <div class="lg:col-span-1 bg-slate-50 dark:bg-slate-700/60 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-2">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-bold text-slate-800 dark:text-white flex items-center gap-1.5">
+                    <i class="fa-solid fa-video text-rose-500"></i>
+                    <span>防詐短影音宣導</span>
+                  </span>
+                  <span class="text-[11px] text-slate-400">MP4 高畫質</span>
+                </div>
+                <div class="rounded-lg overflow-hidden bg-black shadow-inner aspect-video flex items-center justify-center">
+                  <video src="images/fraud/671bb606-c8f0-4bd1-b178-a671ad4cb133.mp4" controls preload="metadata" class="w-full h-full object-contain"></video>
+                </div>
+              </div>
+              <div class="pt-1 text-center border-t border-slate-200 dark:border-slate-600">
+                <a href="images/fraud/671bb606-c8f0-4bd1-b178-a671ad4cb133.mp4" download="防範網路詐騙宣導短片.mp4" class="text-xs text-blue-600 dark:text-blue-400 hover:underline font-semibold inline-flex items-center gap-1">
+                  <i class="fa-solid fa-download"></i> 下載影片檔 (3.2 MB)
+                </a>
+              </div>
+            </div>
+
+            <!-- 圖卡 1 -->
+            <div class="bg-slate-50 dark:bg-slate-700/60 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-2">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-bold text-slate-800 dark:text-white flex items-center gap-1.5">
+                    <i class="fa-regular fa-image text-emerald-500"></i>
+                    <span>防詐宣導圖卡 (一)</span>
+                  </span>
+                  <span class="text-[11px] text-slate-400">點擊放大檢視</span>
+                </div>
+                <div class="rounded-lg overflow-hidden border border-slate-200 dark:border-slate-600 cursor-pointer group bg-slate-100 dark:bg-slate-800" onclick="openLightbox('images/fraud/14415.jpg', '防範網路詐騙宣導圖卡 (一)')">
+                  <img src="images/fraud/14415.jpg" alt="防範網路詐騙圖卡1" class="w-full h-44 object-cover object-top group-hover:scale-105 transition-transform duration-200" loading="lazy" />
+                </div>
+              </div>
+              <div class="pt-1 text-center border-t border-slate-200 dark:border-slate-600">
+                <a href="images/fraud/14415.jpg" download="防範網路詐騙圖卡1.jpg" class="text-xs text-blue-600 dark:text-blue-400 hover:underline font-semibold inline-flex items-center gap-1">
+                  <i class="fa-solid fa-download"></i> 下載圖卡 (404 KB)
+                </a>
+              </div>
+            </div>
+
+            <!-- 圖卡 2 -->
+            <div class="bg-slate-50 dark:bg-slate-700/60 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between space-y-2">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-bold text-slate-800 dark:text-white flex items-center gap-1.5">
+                    <i class="fa-regular fa-image text-emerald-500"></i>
+                    <span>防詐宣導圖卡 (二)</span>
+                  </span>
+                  <span class="text-[11px] text-slate-400">點擊放大檢視</span>
+                </div>
+                <div class="rounded-lg overflow-hidden border border-slate-200 dark:border-slate-600 cursor-pointer group bg-slate-100 dark:bg-slate-800" onclick="openLightbox('images/fraud/14423.jpg', '防範網路詐騙宣導圖卡 (二)')">
+                  <img src="images/fraud/14423.jpg" alt="防範網路詐騙圖卡2" class="w-full h-44 object-cover object-top group-hover:scale-105 transition-transform duration-200" loading="lazy" />
+                </div>
+              </div>
+              <div class="pt-1 text-center border-t border-slate-200 dark:border-slate-600">
+                <a href="images/fraud/14423.jpg" download="防範網路詐騙圖卡2.jpg" class="text-xs text-blue-600 dark:text-blue-400 hover:underline font-semibold inline-flex items-center gap-1">
+                  <i class="fa-solid fa-download"></i> 下載圖卡 (321 KB)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>  <!-- ==================== 模組四：總務處報告事項 ==================== -->
       <section id="section-ga" class="content-section space-y-4" data-office="ga">
         <div class="flex items-center gap-2 border-b-2 border-amber-500 pb-2">
           <span class="p-2 rounded-xl bg-amber-600 text-white text-base"><i class="fa-solid fa-wrench"></i></span>
